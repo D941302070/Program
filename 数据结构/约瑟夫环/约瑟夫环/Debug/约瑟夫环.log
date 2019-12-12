@@ -1,0 +1,18 @@
+﻿  约瑟夫环.c
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(24,6): warning C4013: “gets”未定义；假设外部返回 int
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(25,15): warning C4013: “strcmp”未定义；假设外部返回 int
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(27,38): warning C4047: “=”:“node *”与“linklist *”的间接级别不同
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(31,14): warning C4133: “=”: 从“node *”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(36,13): warning C4133: “=”: 从“linklist”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(45,18): warning C4133: “=”: 从“node *”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(52,20): warning C4133: “==”: 从“node *”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(54,31): warning C4133: “!=”: 从“linklist”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(55,33): warning C4133: “=”: 从“node *”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(60,33): warning C4133: “!=”: 从“node *”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(61,33): warning C4133: “=”: 从“node *”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(71,17): warning C4133: “=”: 从“node *”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(72,21): warning C4133: “!=”: 从“linklist”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(76,21): warning C4133: “==”: 从“linklist”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(77,19): warning C4133: “=”: 从“node *”到“node *”的类型不兼容
+C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\约瑟夫环\约瑟夫环.c(79,21): warning C4133: “=”: 从“node *”到“node *”的类型不兼容
+  约瑟夫环.vcxproj -> C:\Users\八级大哥段\Desktop\数据结构\约瑟夫环\Debug\约瑟夫环.exe

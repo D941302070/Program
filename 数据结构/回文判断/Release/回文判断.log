@@ -1,0 +1,16 @@
+﻿  源.c
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(16,30): warning C4013: “malloc”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(28,6): warning C4013: “free”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(37,6): warning C4013: “gets”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(49,8): warning C4013: “exit”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(62,25): warning C4047: “函数”:“LinkStack”与“LinkStack *”的间接级别不同
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(62,25): warning C4024: “Pop”: 形参和实参 1 的类型不同
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(74,61): warning C4047: “=”:“LinkStack *”与“LinkStackNode *”的间接级别不同
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(75,30): warning C4047: “函数”:“LinkStack”与“LinkStack *”的间接级别不同
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(75,30): warning C4024: “Write”: 形参和实参 1 的类型不同
+  正在生成代码
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(53): warning C4172: 返回局部变量或临时变量的地址: x
+  All 8 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  回文判断.vcxproj -> C:\Users\ASUS\Desktop\数据结构\回文判断\Release\回文判断.exe

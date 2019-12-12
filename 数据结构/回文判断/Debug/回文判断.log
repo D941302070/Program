@@ -1,0 +1,12 @@
+﻿  源.c
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(15,30): warning C4013: “malloc”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(16,19): warning C4047: “=”:“char”与“char *”的间接级别不同
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(26,6): warning C4013: “free”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(37,6): warning C4013: “gets”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(38,8): warning C4013: “strcpy”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(43,17): warning C4047: “函数”:“char *”与“char”的间接级别不同
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(43,17): warning C4024: “Push”: 形参和实参 2 的类型不同
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(47,8): warning C4013: “exit”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(59,24): warning C4013: “strlen”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\回文判断\源.c(65,13): warning C4013: “strcmp”未定义；假设外部返回 int
+  回文判断.vcxproj -> C:\Users\ASUS\Desktop\数据结构\回文判断\Debug\回文判断.exe

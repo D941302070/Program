@@ -1,0 +1,11 @@
+﻿  二叉树.c
+C:\Users\ASUS\Desktop\数据结构\二叉树\二叉树.c(19,29): warning C4013: “malloc”未定义；假设外部返回 int
+C:\Users\ASUS\Desktop\数据结构\二叉树\二叉树.c(21,31): warning C4133: “函数”: 从“TreeNode **”到“treenode *”的类型不兼容
+C:\Users\ASUS\Desktop\数据结构\二叉树\二叉树.c(22,31): warning C4133: “函数”: 从“TreeNode **”到“treenode *”的类型不兼容
+C:\Users\ASUS\Desktop\数据结构\二叉树\二叉树.c(32,24): warning C4133: “函数”: 从“TreeNode *”到“treenode”的类型不兼容
+C:\Users\ASUS\Desktop\数据结构\二叉树\二叉树.c(33,24): warning C4133: “函数”: 从“TreeNode *”到“treenode”的类型不兼容
+C:\Users\ASUS\Desktop\数据结构\二叉树\二叉树.c(41,23): warning C4133: “函数”: 从“TreeNode *”到“treenode”的类型不兼容
+C:\Users\ASUS\Desktop\数据结构\二叉树\二叉树.c(43,23): warning C4133: “函数”: 从“TreeNode *”到“treenode”的类型不兼容
+C:\Users\ASUS\Desktop\数据结构\二叉树\二叉树.c(51,25): warning C4133: “函数”: 从“TreeNode *”到“treenode”的类型不兼容
+C:\Users\ASUS\Desktop\数据结构\二叉树\二叉树.c(52,25): warning C4133: “函数”: 从“TreeNode *”到“treenode”的类型不兼容
+  二叉树.vcxproj -> C:\Users\ASUS\Desktop\数据结构\二叉树\Debug\二叉树.exe
