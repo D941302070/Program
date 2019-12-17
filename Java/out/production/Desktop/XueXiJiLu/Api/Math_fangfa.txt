@@ -1,6 +1,0 @@
-Math.float(a)		a取整
-Math.round(a)		a对小数点后第一位四舍五入
-Math.abs(a)		a取绝对值
-Math.pow(m，n)		m的n次方
-Math.sqrt(a)		a的平方根
-Math.round(a*10)/10.0	a保留小数点后一位四舍五入
