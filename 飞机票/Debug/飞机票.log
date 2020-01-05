@@ -1,0 +1,5 @@
+﻿  global.c
+  main.c
+C:\Users\Administration\Desktop\飞机票\main.c(9,30): warning C4013: “malloc”未定义；假设外部返回 int
+  正在生成代码...
+  飞机票.vcxproj -> C:\Users\Administration\Desktop\飞机票\Debug\飞机票.exe
