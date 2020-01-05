@@ -24,7 +24,7 @@
     <ClCompile Include="list.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="db_operation.c">
+    <ClCompile Include="global.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +35,7 @@
     <ClInclude Include="list.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="db_operation.h">
+    <ClInclude Include="global.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

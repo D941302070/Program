@@ -1,9 +1,13 @@
 #include <stdio.h>
-#include "db_operation.h"
-
+#include "global.h"
+/*
+interface…………完成
+implement…………完成
+*/
 int main(void) {
-	db_operation_t dbo = { 0 };
-	init_db_operation(&dbo, "db.txt");
-	start(&dbo);
+	all_data_t* p_data;
+	p_data = (all_data_t*)malloc(sizeof(all_data_t));
+	init_struct(p_data,"data.txt");
+	start(p_data);
 	return 0;
 }
