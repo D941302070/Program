@@ -36,6 +36,6 @@ public class text02 {
             System.out.println(str);
         }
 
-    }
+}
 
 }

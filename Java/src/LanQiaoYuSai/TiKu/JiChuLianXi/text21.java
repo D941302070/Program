@@ -20,25 +20,34 @@ import java.util.Scanner;
 
 public class text21 {
 
-    public static void Sn(int n){
+    public static void Sn(int n) {
 
-        for (int i = 0; i < n-1; i++) {
+        for (int i = 0; i < n - 1; i++) {
             System.out.print("(");
         }
-        for (int i = 1; i < n+1; i++) {
+        for (int i = 1; i < n + 1; i++) {
             An(i);
-            System.out.print("+"+(i-1));
-            if (i==n){
+            System.out.print("+" + (n - i + 1));
+            if (i == n) {
                 return;
-            }else {
+            } else {
                 System.out.print(")");
             }
         }
 
     }
 
-    public static void An(int n){
-        System.out.print("A"+n);
+    public static void An(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print("sin(" + (i + 1));
+            if (i == n - 1) {
+                break;
+            }
+            System.out.print("-");
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.print(")");
+        }
     }
 
     public static void main(String[] args) {
