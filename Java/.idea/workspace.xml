@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="613759e6-a481-4099-8e38-c31a07aa016d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/修改.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/删除失败.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/删除成功.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/开始菜单.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/显示航班，原始数据.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/最后文件截图.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/查找失败.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/查找成功.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/添加输入.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/输入结果.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../飞机票/截图/退出.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop/LanQiaoYuSai/TiKu/JiChuLianXi/text21.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop/LanQiaoYuSai/TiKu/JiChuLianXi/text21.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop/LanQiaoYuSai/TiKu/JiChuLianXi/text23.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop/LanQiaoYuSai/TiKu/JiChuLianXi/text23.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text21.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text21.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text23.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text23.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/.vs/飞机票/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/.vs/飞机票/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/.vs/飞机票/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/.vs/飞机票/v16/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/airplane.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/airplane.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/global.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/global.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/list.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/list.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/main.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/vc142.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/vc142.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.log" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/CL.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/CL.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/link.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/link.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/飞机票.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/Debug/飞机票.tlog/飞机票.lastbuildstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../飞机票/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../飞机票/data.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,105 +17,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text22.java">
+        <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/Api/Date/demo01_date.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#685#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="296">
+              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/Api/Date/demo02_date.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text23.java">
+        <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/Api/Date/demo03_DateFormat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-190">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text24.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-              <folding>
-                <element signature="e#1910#1911#0" expanded="true" />
-                <element signature="e#1934#1935#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text17.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text18.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="540">
+              <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3443#3444#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text25.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#72#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text19.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#72#0" expanded="true" />
-                <element signature="e#1863#1864#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text20.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#72#0" expanded="true" />
-                <element signature="e#753#754#0" expanded="true" />
-                <element signature="e#776#777#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text21.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="58" />
             </state>
           </provider>
         </entry>
@@ -182,14 +72,22 @@
         <option value="$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text25.java" />
         <option value="$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text19.java" />
         <option value="$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text20.java" />
+        <option value="$PROJECT_DIR$/src/XueXiJiLu/Api/Object/Preson.java" />
+        <option value="$PROJECT_DIR$/src/XueXiJiLu/Api/Object/demo01_toString.java" />
+        <option value="$PROJECT_DIR$/src/XueXiJiLu/Api/Object/demo02_equals.java" />
+        <option value="$PROJECT_DIR$/src/XueXiJiLu/Api/Object/Person.java" />
+        <option value="$PROJECT_DIR$/src/XueXiJiLu/Api/Object/demo03_object.java" />
+        <option value="$PROJECT_DIR$/src/XueXiJiLu/Api/Object/demo03_objects.java" />
+        <option value="$PROJECT_DIR$/src/XueXiJiLu/Api/Date/demo01_date.java" />
+        <option value="$PROJECT_DIR$/src/XueXiJiLu/Api/Date/demo02_data.java" />
+        <option value="$PROJECT_DIR$/src/XueXiJiLu/Api/Date/demo03_DateFormat.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="923" />
-    <option name="height" value="1163" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="992" />
+    <option name="width" value="817" />
+    <option name="height" value="1158" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -215,28 +113,22 @@
               <item name="Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="LanQiaoYuSai" type="462c0819:PsiDirectoryNode" />
+              <item name="XueXiJiLu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="LanQiaoYuSai" type="462c0819:PsiDirectoryNode" />
-              <item name="TiKu" type="462c0819:PsiDirectoryNode" />
+              <item name="XueXiJiLu" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="LanQiaoYuSai" type="462c0819:PsiDirectoryNode" />
-              <item name="TiKu" type="462c0819:PsiDirectoryNode" />
-              <item name="JiChuLianXi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="PersonalLibrary" type="462c0819:PsiDirectoryNode" />
+              <item name="XueXiJiLu" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+              <item name="Date" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -252,8 +144,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -267,13 +160,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.text19">
-    <configuration name="text14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LanQiaoYuSai.TiKu.JiChuLianXi.text14" />
+  <component name="RunManager" selected="Application.demo03_DateFormat">
+    <configuration name="demo01_date" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="XueXiJiLu.Api.Date.demo01_date" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LanQiaoYuSai.TiKu.JiChuLianXi.*" />
+          <option name="PATTERN" value="XueXiJiLu.Api.Date.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -281,12 +174,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="text17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LanQiaoYuSai.TiKu.JiChuLianXi.text17" />
+    <configuration name="demo02_date" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="XueXiJiLu.Api.Date.demo02_date" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LanQiaoYuSai.TiKu.JiChuLianXi.*" />
+          <option name="PATTERN" value="XueXiJiLu.Api.Date.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -294,12 +187,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="text18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LanQiaoYuSai.TiKu.JiChuLianXi.text18" />
+    <configuration name="demo02_equals" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="XueXiJiLu.Api.Object.demo02_equals" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LanQiaoYuSai.TiKu.JiChuLianXi.*" />
+          <option name="PATTERN" value="XueXiJiLu.Api.Object.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -307,12 +200,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="text19" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LanQiaoYuSai.TiKu.JiChuLianXi.text19" />
+    <configuration name="demo03_DateFormat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="XueXiJiLu.Api.Date.demo03_DateFormat" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LanQiaoYuSai.TiKu.JiChuLianXi.*" />
+          <option name="PATTERN" value="XueXiJiLu.Api.Date.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -320,12 +213,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="text24" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LanQiaoYuSai.TiKu.JiChuLianXi.text24" />
+    <configuration name="demo03_objects" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="XueXiJiLu.Api.Object.demo03_objects" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LanQiaoYuSai.TiKu.JiChuLianXi.*" />
+          <option name="PATTERN" value="XueXiJiLu.Api.Object.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -335,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.text19" />
-        <item itemvalue="Application.text18" />
-        <item itemvalue="Application.text17" />
-        <item itemvalue="Application.text14" />
-        <item itemvalue="Application.text24" />
+        <item itemvalue="Application.demo03_DateFormat" />
+        <item itemvalue="Application.demo02_date" />
+        <item itemvalue="Application.demo01_date" />
+        <item itemvalue="Application.demo03_objects" />
+        <item itemvalue="Application.demo02_equals" />
       </list>
     </recent_temporary>
   </component>
@@ -359,28 +252,29 @@
       <workItem from="1579268516151" duration="4361000" />
       <workItem from="1579313057902" duration="9262000" />
       <workItem from="1579341221866" duration="3672000" />
-      <workItem from="1579420736001" duration="11313000" />
+      <workItem from="1579420736001" duration="12559000" />
+      <workItem from="1579503358562" duration="1751000" />
+      <workItem from="1579508768526" duration="1965000" />
+      <workItem from="1579511647609" duration="9559000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30275000" />
+    <option name="totallyTimeSpent" value="44796000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1215" height="775" extended-state="7" />
-    <editor active="true" />
+    <frame x="794" y="0" width="653" height="926" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17977528" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.5590406" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Duplicates" weight="0.32970452" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970452" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.281493" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28337532" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39968896" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -391,6 +285,7 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Duplicates" order="13" weight="0.32970452" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24978392" />
@@ -481,10 +376,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text17.java">
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        <state relative-caret-position="145">
+          <caret line="859" column="18" selection-start-line="859" selection-start-column="18" selection-end-line="859" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PersonalLibrary/Matrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text22.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text23.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/InnerClass/red/OpenMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -499,10 +425,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text23.java">
+    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text17.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state relative-caret-position="19">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text18.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3419#3420#0" expanded="true" />
+            <element signature="e#3443#3444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text25.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text19.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+          <folding>
+            <element signature="e#1839#1840#0" expanded="true" />
+            <element signature="e#1863#1864#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -513,78 +469,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text22.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#685#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text25.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/Scanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="859" column="18" selection-start-line="859" selection-start-column="18" selection-end-line="859" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text18.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3443#3444#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PersonalLibrary/Matrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text19.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-            <element signature="e#1863#1864#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text20.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        <state relative-caret-position="133">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="97" selection-start-line="2" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Demo01ToString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="38" column="1" lean-forward="true" selection-start-line="2" selection-end-line="38" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/Api/Object/demo01_toString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
           <folding>
-            <element signature="e#0#72#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LanQiaoYuSai/TiKu/JiChuLianXi/text23.java">
+    <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/InnerClass/red/RedPacketFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state relative-caret-position="711">
+          <caret line="464" column="6" lean-forward="true" selection-start-line="464" selection-start-column="6" selection-end-line="464" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/Api/Object/demo02_equals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/Api/Object/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+          <folding>
+            <element signature="e#1946#1947#0" expanded="true" />
+            <element signature="e#1992#1993#0" expanded="true" />
+            <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#2050#2051#0" expanded="true" />
+            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#2122#2123#0" expanded="true" />
+            <element signature="e#2149#2150#0" expanded="true" />
+            <element signature="e#2175#2176#0" expanded="true" />
+            <element signature="e#2210#2211#0" expanded="true" />
+            <element signature="e#2240#2241#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="156" column="4" selection-start-line="156" selection-start-column="4" selection-end-line="158" selection-end-column="5" />
+          <folding>
+            <element signature="e#5877#5878#0" expanded="true" />
+            <element signature="e#5913#5914#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1045">
+          <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+          <folding>
+            <element signature="e#2486#2487#0" expanded="true" />
+            <element signature="e#2547#2548#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="127" column="6" lean-forward="true" selection-start-line="127" selection-start-column="6" selection-end-line="127" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/Api/Object/demo03_objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/Api/Date/demo01_date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/Api/Date/demo02_date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XueXiJiLu/Api/Date/demo03_DateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -594,6 +599,17 @@
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
