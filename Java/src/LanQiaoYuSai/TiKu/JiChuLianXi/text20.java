@@ -20,10 +20,21 @@ shi er yi san qian si bai wu shi liu wan qi qian ling jiu
  */
 package LanQiaoYuSai.TiKu.JiChuLianXi;
 
-public class text20 {
-    public static void method(){
+import java.util.Scanner;
 
+public class text20 {
+    public static void method() {
+        int n = new Scanner(System.in).nextInt();
+
+        int[] f = new int[n + 2];
+        f[1] = 1;
+        f[2] = 1;
+        for (int i = 3; i <= n; i++) {
+            f[i] = (f[i - 1] + f[i - 2]) % 10007;
+        }
+        System.out.println(f[n]);
     }
+
     public static void main(String[] args) {
         method();
     }
