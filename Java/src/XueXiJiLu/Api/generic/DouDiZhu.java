@@ -33,7 +33,7 @@ public class DouDiZhu {
         /*
         2.洗牌
             可以使用集合工具类Collections中的方法
-            static void shuffle(List<?> list)使用默认随机源对指定列表进行置换
+            static void shuffle(Demo01List<?> list)使用默认随机源对指定列表进行置换
          */
         Collections.shuffle(poker);
         //System.out.println(poker);
