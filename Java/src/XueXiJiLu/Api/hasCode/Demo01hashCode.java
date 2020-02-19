@@ -11,9 +11,11 @@ public class Demo01hashCode {
     public static void main(String[] args) {
         Person p1 = new Person();
         int h1 = p1.hashCode();
+        System.out.println(h1);
 
         Person p2 = new Person();
         int h2 = p2.hashCode();
+        System.out.println(h2);
         /*
         toString方法的源码：
             return getClass().getName() + "@" + Integer.toHexString(hashCode());
