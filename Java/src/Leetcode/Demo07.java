@@ -20,7 +20,7 @@ package Leetcode;
  * 
  */
 
-public class Seven {
+public class Demo07 {
 
 	public static int reverse(int x) {
 

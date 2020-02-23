@@ -29,7 +29,7 @@ package Leetcode;
  * 
 
  */
-public class Thirteen {
+public class Demo13 {
 	public  static int romanToInt(String s) {
 		int sum = 0;
 		int i = 0;

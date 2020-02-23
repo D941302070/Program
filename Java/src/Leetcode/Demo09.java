@@ -18,7 +18,7 @@ package Leetcode;
  *           你能不将整数转为字符串来解决这个问题吗？
  * 
  */
-public class Nine {
+public class Demo09 {
 	public static boolean isPalindrome(int x) {
 		int rev = 0;
 		int re = x;//储存刚进来的x

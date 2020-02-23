@@ -15,7 +15,7 @@ package Leetcode;
  * 
  */
 
-public class one {
+public class Demo01 {
 
 	public int[] twoSum(int[] nums, int target) {
 		int[] a = new int[2];
