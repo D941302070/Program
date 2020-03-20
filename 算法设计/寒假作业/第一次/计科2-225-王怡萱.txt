@@ -1,0 +1,477 @@
+1．熟悉C语言结构及数组定义。
+编写使用数组和结构解决约瑟夫问题的程序。
+　　完成多项式相加及相乘问题的程序
+1.1.1题目：约瑟夫问题
+1.1.2思路：首先录入总人数和报数上限，定义计数器，记录出圈人数使用whlie循环，定义圈内人为1，出圈为0，当出圈人数等于总人数时，跳出循环，程序结束。
+1.1.3伪代码；
+		int main (void)
+		{
+		input(s,n):
+		a[num]; 
+		for k=0 to num -1 do
+			a[k]=1; 
+		while (j<num)  do
+		{
+			if (a[j]!=0) 
+			{
+				a[j]=i%s; 
+				i++; 
+				if (a[j]==0) 
+					输出出列元素;
+			}
+			j++;
+			if (j==n) 
+				j=0;
+			for i = 0 to n-1 do
+			{
+				if (a[i]==0)
+					m++; }
+			if (m==n)
+				break; 
+			else
+				m=0;  
+			}
+			return 0;
+		}
+		}
+1.1.4c程序：
+		#include<stdio.h>
+		int main (void)
+		{
+		int n,s;
+		int i,j,m;
+		i=1;j=0;m=0;
+		printf("the number is :");  
+		scanf("%d",&n); 
+		printf("the step is:"); 
+		scanf("%d",&s);
+		int a[num]; 
+		for (int k=0;k<num;k++)
+			a[k]=1; 
+		while (j<num) 
+		{
+			if (a[j]!=0) 
+			{
+				a[j]=i%s; 
+				i++; 
+				if (a[j]==0) 
+				printf ("No.%d is out.\n",j+1); 
+			}
+			j++;
+			if (j==n) 
+				j=0;
+			for (i = 0;i<n;i++)
+			{
+				if (a[i]==0)
+					m++; }
+			if (m==n)
+				break; 
+			else
+				m=0;  
+			}
+			return 0;
+		}
+		}
+1.1.5体会：此程序首先要解决的问题是跳出循环的条件，注意数组的循环情况，要保证所有人出圈。
+1.2.1题目：多项式相加
+1.2.2思路：先创建两条链表分别储存两个多项式的系数，然后用双指针遍历两个链表，并按顺序求和
+并存入新链表，然后输出链表。
+1.2.3伪代码：
+struct dxs 
+{
+	coe;  
+	exp;  
+	pNext;  
+ 
+}DXS, * PDXS; 
+int main(void)
+{
+	Da = creat_dxs();
+    traverse(Da);
+	Db = creat_dxs();
+    traverse(Db);
+	PDXS Dj = add(Da, Db);
+	traverse(Dj);
+}
+ 
+PDXS creat_dxs()
+{
+	pHead->pNext = NULL;
+	pTail = pHead;
+	pNew = NULL;
+	input(len);
+	for(i = 0; i < len; i++)
+	{
+		input(c,e);
+		录入数据，插入节点;
+	}
+	return pHead;
+}
+ 
+//遍历链表
+void traverse(PDXS pHead)
+{
+	p = pHead->pNext; 
+	while(p != NULL) do
+	{
+		输出;
+		p = p->pNext;
+	}
+}
+PDXS add(PDXS Da, PDXS Db)
+{
+	Dj->pNext = NULL;
+	pTail = Dj;  
+	Dah = Da->pNext;  
+	Dbh = Db->pNext;
+	while(Dah && Dbh)
+	{
+		if(Dah->exp < Dbh->exp)
+			插入a，退后指针;
+		else if(Dah->exp > Dbh->exp)
+			插入b，退后指针;
+		else
+		{
+			if(指数相同))
+				求和系数；		
+			A,B都向后遍历；			
+		}
+	}
+	插入剩余元素；
+	return Dj;
+}
+1.2.4c程序：
+# include <stdio.h>
+# include <malloc.h>
+ 
+typedef struct dxs 
+{
+	float coe;  
+	int exp;   
+	struct dxs * pNext;  
+ 
+}DXS, * PDXS;
+ 
+PDXS creat_dxs();   
+void traverse(PDXS pHead);   
+PDXS add(PDXS Da, PDXS Db);  
+ 
+int main(void)
+{
+	PDXS Da = creat_dxs();
+    traverse(Da);
+ 
+	PDXS Db = creat_dxs();
+    traverse(Db);
+
+	PDXS Dj = add(Da, Db);
+	traverse(Dj);
+ 
+	return 0;
+}
+ 
+PDXS creat_dxs()
+{
+	PDXS pHead = (PDXS)malloc(sizeof(DXS)); 
+	pHead->pNext = NULL;
+ 
+	PDXS pTail = pHead;
+	PDXS pNew = NULL;
+ 
+	int len;
+	float c;
+	int e;
+	int i;
+ 
+	printf("输入多项式的项数：len = ");
+	scanf("%d", &len);
+ 
+	for(i = 0; i < len; i++)
+	{
+		printf("分别输入第%d项的系数c、指数e:", i+1);
+		scanf("%f%d", &c, &e);
+		
+		pNew = (PDXS)malloc(sizeof(DXS));
+ 
+		pNew->coe = c;
+		pNew->exp = e;
+		pNew->pNext = NULL;
+ 
+		pTail->pNext = pNew;
+		pTail = pNew;
+	}
+ 
+	return pHead;
+}
+
+void traverse(PDXS pHead)
+{
+	PDXS p = pHead->pNext;  //首节点
+ 
+	while(p != NULL)
+	{
+		printf("(%.2f %d), ", p->coe, p->exp);
+		p = p->pNext;
+	}
+	printf("\n");
+}
+ 
+PDXS add(PDXS Da, PDXS Db)
+{
+	PDXS Dj = (PDXS)malloc(sizeof(DXS));  
+	Dj->pNext = NULL;
+	PDXS pTail = Dj;  
+ 
+	PDXS Dah = Da->pNext;  
+	PDXS Dbh = Db->pNext;
+	while(Dah && Dbh)
+	{
+		if(Dah->exp < Dbh->exp)
+		{
+			pTail->pNext = Dah;  
+			pTail = Dah;
+ 
+			Dah = Dah->pNext; 
+		}
+ 
+		else if(Dah->exp > Dbh->exp)
+		{
+			pTail->pNext = Dbh;
+			pTail = Dbh;
+ 
+			Dbh = Dbh->pNext; 
+		}
+ 
+		else
+		{
+			if(0 != (Dah->coe + Dbh->coe))
+			{
+				Dah->coe = Dah->coe + Dbh->coe;
+				pTail->pNext = Dah;
+				pTail = Dah;		
+			}
+		
+			Dah = Dah->pNext;
+			Dbh = Dbh->pNext;			
+		}
+	}
+
+	if(Dah != NULL)
+	{
+		pTail->pNext = Dah;
+	}
+	if(Dbh != NULL)
+	{
+		pTail->pNext = Dbh;
+	}
+ 
+	return Dj;
+}
+1.2.5体会：使用了链表储存数据，联系了链表的遍历宇增减节点
+
+3.1题目：使用循环与递归两种方法实现1+2+3+4+…+n
+　　3.2思路：循环：使用for循环，把它们依次相加，输出答案
+　　递归：调用函数，判断你值，若n=1返回1，当n！=1时，再次调用参数为n-1时的函数，并使n+（n-1）
+　　3.3伪代码：
+		循环：
+			count = 0;
+　　		void methodloop(int n)
+　　      	{
+　　			for i=1 to n do
+　　				count += i;
+　　		}
+		递归：
+		int methodrecurrence(int n) //递归实现
+　　	{
+　　			if (n == 1)
+　　				return 1;
+　　			else 
+　　				return n + methodrecurrence(n - 1);
+　　	}
+　　3.4：c程序
+　　循环：
+　　#include <stdio.h>
+　　		int count = 0;
+　　		void methodloop(int n)		//循环实现
+　　
+　　      {
+　　				int i;
+　　			for ( i = 1; i <= n; i++)
+　　				count += i;
+　　		}
+　　void main()
+　　		{
+　　			int n;
+　　			int end = 0;
+　　			printf("请输入n\n");
+　　			scanf("%d", &n);
+　　			methodloop(n);
+　　			printf("循环结果为：%d\n", count);
+　　		}
+　　递归：
+
+　　	#include <stdio.h>
+　　	int methodrecurrence(int n) //递归实现
+　　{
+　　			if (n == 1)
+　　				return 1;
+　　			else 
+　　				return n + methodrecurrence(n - 1);
+　　		}
+　　		void main()
+　　		{
+　　			int n;
+　　			int end = 0;
+　　			printf("请输入n\n");
+　　			scanf("%d", &n);
+　　			end=methodrecurrence(n);
+　　			printf("遍历结果为：%d",end );
+　　		}
+3.5体会：使用循环相加只需合理使用for循环将其依次相加即可，在使用递归相加时需注意返回值的选取，以便调用原函数。
+
+5.1题目：求一个矩阵的鞍点(该点的值在其所在行上最小且在其所在列上最大)
+　　5.2思路：以行为主元进行，找出每行最小值，再找出最小值所在列的最大值，如果两值相同则为鞍点
+　　5.3伪代码：
+int main(void)
+{
+	input(i,j);
+	input(c[a,b]);
+	for a = 0 to i-1 do
+	{
+		d = c[a][1];
+		for b = 0 to j-1 do
+		{
+			if (d > c[a][b])
+			{
+				d = c[a][b];
+				f = b;
+			}
+		}
+		for temp = 0 to i-1 do
+		{
+			if (e < c[temp][f])
+			{
+				e = c[temp][f];
+			}
+		}
+		if (d == e)
+		{
+			输出点；
+			flag = 1;
+		}
+	}
+	return 0;
+}
+　　5.4：c程序
+
+#include<stdio.h>
+ 
+int main(void)
+{
+	int i, j;//行i  列j
+	int d = 0, e = 0, f; //行最大d 列最大e
+	int a, b;
+	int temp, flag = 0;
+	int c[50][50];
+	printf("请输入矩阵行数和列数");
+	scanf("%d %d", &i, &j);
+	for (a = 0; a < i; a++)
+	{
+		for (b = 0; b < j; b++)
+			scanf("%d", &c[a][b]);
+	}
+	for (a = 0; a < i; a++)
+	{
+		d = c[a][1];
+		for (b = 0; b < j; b++)
+		{
+			if (d > c[a][b])
+			{
+				d = c[a][b];
+				f = b;
+			}
+		}
+		for (temp = 0; temp < i; temp++)
+		{
+			if (e < c[temp][f])
+				e = c[temp][f];
+		}
+		if (d == e)
+		{
+			printf("鞍点为%d\n", d);
+			flag = 1;
+		}
+	}
+	if (flag == 0)
+		printf("此矩阵没有鞍点\n");
+	return 0;
+}
+5.5体会：使用二维数组储存数据并对每行每列数据进行遍历寻找，并使用了标记flag来记录数据
+		
+7.1题目：全校学生选学生会主席，有五个候选人，编号一到五，每个学生一张选票，只能填写一个人的编号。编程完成统计选票的工作
+　　7.2思路：定义一个数组用来存储每个人的票数，输入每个候选人的编号，对比选手编号和票，对应相加，遍历输出数组。
+　　7.3伪代码：
+	void main()
+		{
+			a[5] = { 0,0,0,0,0 };
+			while (i != 0) do
+			{
+				input(num);
+				if (num == -1)
+					for i = 0 to 4 do
+						输出得票情况；
+				a[num - 1] ++;
+			}
+		}
+　　7.4c程序
+		#include <stdio.h>
+		void main()
+		{
+			int a[5] = { 0,0,0,0,0 };
+			int num, i = 0;
+			printf("请分别输入同学编号，输入0结束\n");
+			while (i != 0)
+			{
+				scanf("%d", &num);
+				if (num == -1)
+					for (i = 0; i < 5; i++)
+						printf("%d号同学的票数为：%d\n", i + 1, a[i]);
+				a[num - 1] ++;
+			}
+		}
+　　7.5体会：此程序主要面对的问题是解决何时判定输入元素结束，最后决定当元素为-1时录入结束，再遍历数组，输出每个人的票数。
+
+　　9.1题目：只有10分,5分, 2分，1分的硬币;顾客付款X分,商品价格y分。问，如何找零钱，使得找的硬币数最少
+　　9.2思路：定义数组，存储硬币类型，输入付款数和价格，计算出找零数额，依次找出找零的硬币数额，输出找零硬币的个数。
+　　9.3伪代码：
+			void main()
+　　		{
+　　			coin[4] = { 10,5,2,1 };
+　　			input(x,y);
+　　		    change= x - y;
+　　			for i=0 to 3 do
+　　			{
+　　				tmp =change/ coin[i];
+　　				change=change%coin[i];
+　　			}
+　　		}
+　　9.4：c程序
+　　#include <stdio.h>
+　　		
+　　		void main()
+　　		{
+　　			int x, y, change, i;
+　　			int tmp;
+　　			int coin[4] = { 10,5,2,1 };
+　　			printf("请输入商品价格y和顾客付款x；\n");
+　　			scanf("%d%d", &y,&x);
+　　		    change= x - y;
+　　			printf("应找回%d枚硬币\n",change);
+　　			for ( i = 0; i < 4; i++)
+　　			{
+　　				tmp =change/ coin[i];
+　　				printf("\n%d分硬币共%d个", coin[i], tmp);
+　　				change=change%coin[i];
+　　			}
+　　		}
+9.5体会：要学会合理使用算法，找出可以找零的最大面额，并正确找到下一次应付的面额，使用除余可以合理解决问题。

@@ -1,0 +1,189 @@
+2
+	1）题目
+		猴子吃桃子问题，猴子第一天摘下若干个桃子，当即吃了一半，还不过瘾，又多吃了两个，第二天早上
+		又将剩下的桃子吃掉一半，又多吃了两个，以后每天早上都吃了前一 天剩下的半零两个，到第10天早上
+		想再吃时，就只剩下两个桃子了。问第一天猴子摘下多少个桃子?
+	2）思路
+		通过逆推，反算出第一天的桃子
+	3）伪代码
+		void Peach() {
+			peachNum = 2;
+			for i = 0 to 9 do
+				peachNum = (peachNum + 2) * 2;
+			print(peachNum);
+		}
+	4）源代码
+		#include<stdio.h> 
+		void Peach() {
+			int peachNum = 2;
+			for (int i = 0; i < 9; i++)
+				peachNum = (peachNum + 2) * 2;
+			printf("第一天摘的桃子的数量为%d", peachNum);
+		}
+
+		int main() {
+			Peach();
+		}
+	
+5
+	1）题目
+		用枚举法解8皇后问题:在国际象棋盘上放8个皇后，国际象棋棋盘共有8行8列,皇后可以吃掉与之同行
+		同列以及同对角线上的其他皇后。为让她们共存,请编写算法
+	2）思路
+		用一维数组来储存每一行的棋子，然后回溯遍历，碰到不满足条件的出局，最终找到最后结果
+	3）伪代码
+		int Cheak(n) {
+			for i = 1 to n do
+				if (n - i == abs(chess[n] - chess[i]) || chess[i] == chess[n]) then
+					return 0;
+			return 1;
+		}
+		void Print() {
+			print(++count);
+			for i = 1 to 8 do
+			{
+				for j = 0 to chess[i] - 1 do print("□");
+				print("☆");
+				for j = 0 to 8 - chess[i] do print("□");
+				print("\n");
+			}
+		}
+		void EightQueens() {
+			for chess[1] = 1 to 8 do
+				for chess[2] = 1 to 8 do
+					if (Cheak(2)) then
+						for chess[3] = 1 to 8 do
+							if (Cheak(3)) then
+								for chess[4] = 1 to 8 do
+									if (Cheak(4)) then
+										for chess[5] = 1 to 8 do
+											if (Cheak(5)) then
+												for chess[6] = 1 to 8 do
+													if (Cheak(6)) then
+														for chess[7] = 1 to 8 do
+															if (Cheak(7)) then
+																for chess[8] = 1 to 8 do
+																	if (Cheak(8)) then 
+																		Print();
+		}
+	4）源代码
+		#include<stdio.h> 
+		#include<math.h>
+		int chess[9] = { 0,0,0,0,0,0,0,0,0 };
+		int count = 0;
+		int Cheak(int n) {
+			for (int i = 1; i < n; i++)
+				if (n - i == abs(chess[n] - chess[i]) || chess[i] == chess[n])
+					return 0;
+			return 1;
+		}
+		void Print() {
+			printf("第%d种情况\n", ++count);
+			for (int i = 1; i <= 8; i++)
+			{
+				for (int j = 0; j < chess[i] - 1; j++) printf("□");
+				printf("☆");
+				for (int j = 0; j < 8 - chess[i]; j++) printf("□");
+				printf("\n");
+			}
+		}
+		void EightQueens() {
+			for (chess[1] = 1; chess[1] <= 8; chess[1]++)
+				for (chess[2] = 1; chess[2] <= 8; chess[2]++)
+					if (Cheak(2))
+						for (chess[3] = 1; chess[3] <= 8; chess[3]++)
+							if (Cheak(3))
+								for (chess[4] = 1; chess[4] <= 8; chess[4]++)
+									if (Cheak(4))
+										for (chess[5] = 1; chess[5] <= 8; chess[5]++)
+											if (Cheak(5))
+												for (chess[6] = 1; chess[6] <= 8; chess[6]++)
+													if (Cheak(6))
+														for (chess[7] = 1; chess[7] <= 8; chess[7]++)
+															if (Cheak(7))
+																for (chess[8] = 1; chess[8] <= 8; chess[8]++)
+																	if (Cheak(8)) 
+																		Print();
+		}
+		void main() {
+			EightQueens();
+		}
+6
+	1）题目
+		百马百担问题:有100匹马，驮100担货。大马驮3担,中马驮2担,两匹小马驮1担，向有大、中、小马各多少?
+	2）思路
+		暴力组合三种马的数量，然后找到满足项输出
+	3）伪代码
+		void HundredHorse() {
+			for i = 0 to 33 do
+				for j = 0 to 50 do
+					for k = 0 to 200; do
+						if (3 * i + 2 * j + k / 2 == 100 && i + j + k == 100) then
+							print(i,j,k);
+		}
+	4）源代码
+		#include<stdio.h> 
+		void HundredHorse() {
+			for (int i = 0; i < 33; i++)
+				for (int j = 0; j < 50; j++)
+					for (int k = 0; k < 200; k = k + 2)
+						if (3 * i + 2 * j + k / 2 == 100 && i + j + k == 100)
+							printf("大马：%3d，中马：%3d，小马:%3d\n",i,j,k);
+		}
+		void main() {
+			HundredHorse();
+		}
+	
+8
+	1）题目
+		寻找满足下列条件的4位整数:①无重复数字;②千位数字非0;③能整除它的各位数字和的平方。
+	2）思路
+		遍历所有的4位数，判断条件，输出满足条件的数
+	3）伪代码
+		void ChooseNum(n) {
+			num = n;
+			plus = 0;
+			flag[10] = { 0,0,0,0,0,0,0,0,0,0 };
+			while (num != 0) do
+			{
+				pop = num % 10;
+				if (flag[pop] == 1)
+					return;
+				plus += pop;
+				flag[pop] = 1;
+				num /= 10;
+			}
+			if (n % (plus * plus) == 0)
+				print( n);
+		}
+		void FindNum() 
+		{
+			for i = 1000 to 9999 do
+				ChooseNum(i);
+		}
+	4）源代码
+		#include<stdio.h> 
+		void ChooseNum(int n) {
+			int num = n;
+			int plus = 0;
+			int flag[10] = { 0,0,0,0,0,0,0,0,0,0 };
+			while (num != 0)
+			{
+				int pop = num % 10;
+				if (flag[pop] == 1)
+					return;
+				plus += pop;
+				flag[pop] = 1;
+				num /= 10;
+			}
+			if (n % (plus * plus) == 0)
+				printf("%d ", n);
+		}
+		void FindNum() 
+		{
+			for (int i = 1000; i < 9999; i++)
+				ChooseNum(i);
+		}
+		void main() {
+			FindNum();
+		}

@@ -1,0 +1,16 @@
+#include<stdio.h> 
+void HanNuo(int n, char a, char b, char c)
+{
+    //n:层数，a：最初的柱子，b：借助的柱子，c：目标柱子
+    if (n == 1)
+        printf("Move dish %d from %c to %c\n", n, a, c); //输出移动动作
+    else
+    {
+        HanNuo(n - 1, a, c, b);      //将a柱子上的从上到下n-1个盘移到b柱子上
+        printf("Move dish %d from %c to %c\n", n, a, c);
+        HanNuo(n - 1, b, a, c);      //将b柱子上的n-1个盘子移到c柱子上
+    }
+}
+void main() {
+    HanNuo(3, 'A', 'B', 'C');
+}

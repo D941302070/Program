@@ -1,0 +1,241 @@
+12.	
+	1）题目
+		求任给的两个数的最小公倍数和最大公约数
+	2）思路
+		最大公约数的算法为辗转相除法，即gcd(a,b) = gcd(b,a mod b)
+		最小公倍数=a*b/最大公约数
+	3）伪代码描述的算法如下：
+		void method() {
+			input(a,b);
+			A = a, B = b;
+			if (a < b) then 交换两个值;
+			while (a % b != 0) do
+			{
+				temp = a % b;
+				a = b;
+				b = temp;
+			}
+			print(b,A*B/b);
+		}
+	4）源代码
+		#include <stdio.h>
+		void method() {
+			int a, b;
+			printf("请输入a，b\n");
+			scanf("%d%d", &a, &b);
+			int A = a, B = b;
+			if (a < b)
+			{
+				int tem = a;
+				a = b;
+				b = tem;
+			}
+			while (a % b != 0)
+			{
+				int temp = a % b;
+				a = b;
+				b = temp;
+			}
+			printf("最大公约数为%d\n",b);
+			printf("最小公倍数为%d",A*B/b);
+		}
+		int main() { 
+			method();
+		}
+	5）调试过程遇到的问题及调试体会
+		计算最大公约数的时候使用了辗转相除法，理解了局部变量的作用
+13.	
+	1）题目
+		编写程序对任给的一个整数n,判断它能否被3,5,7整除。输出下面信息之一。
+		能同时被3,5,7整除
+		能同时被其中两个数整除，要具体指出哪两个数。
+		能被其中一个数整除,要具体指出被哪一个数整除
+		不能被上述任一个数整除
+	2）思路
+		首先创建一个标记数组用来标记对应的数是否被整除，然后依次运算，并记录被整除的个数，
+		最后依次判断情况，然后依次输出
+	3）伪代码描述的算法如下：
+		void method() {
+			input(n);
+			for i = 0 to 2 do
+				if (n被当前数整除)then
+				{
+					标记数组对应元素被标记;
+					count++;//记录个数
+				}
+			判断情况，并输出情况;
+		}
+	4）源代码
+		#include <stdio.h>
+		void method() {
+			int n;
+			int num[3] = { 3,5,7 };
+			int flag[3] = { 0,0,0 };
+			int count = 0;
+			printf("请输入n\n");
+			scanf("%d", &n);
+			for (int i = 0; i < 3; i++)
+				if (n%num[i]==0)
+				{
+					flag[i] = 1;
+					count++;
+				}
+			if (count == 3) printf("能同时被3,5,7整除\n");
+			if (count == 0) printf("不能被任一个数整除\n");
+			if (count < 3 && count>0) {
+				printf("可以被%d个数整除,分别是",count);
+				for (int i = 0; i < 3; i++)
+					if (flag[i]==1)
+						printf(" %d ", num[i]);
+			}
+		}
+		int main()
+		{
+			method();
+		}
+	5）调试过程遇到的问题及调试体会
+		使用了标记数组，用空间来消除时间，在第一次想法上优化了许多步骤，放弃了大量判断结构
+16.	
+	1）题目
+		任给一个十进制数，转换成16进制数
+	2）思路
+		要求16进制的数字，要求出在16进制下每一位的数字，也就是0~F。而要算出每一位的数字，
+		算法是每次对num用进制也就是16取余，这样就得出了num在16进制下的个位，然后记录余数，
+		接着对num除以16，然后num就回变为减少个位的一个数（如98F变为98）。然后重复上述步骤，
+		num的16进制表示的每一位都被储存在数组中，然后输出即可。
+	3）伪代码描述的算法如下：
+		void method() {
+			input(num);
+			i=0;
+			while (num > 0) do{//依次算出当前num的最后一位，然后记录在数组中
+				pop = num % 16;
+				result[i] = pop;
+				i++;
+				num = num / 16;
+			}
+			倒序输出result数组元素对应的16进制代码;
+		}
+	4）源代码
+		#include <stdio.h>
+		void method() {
+			int num = 0;
+			int result[100];
+			int i = 0;
+			int pop;//余数
+			char hex[16] = { '0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F' };
+			printf("请输入一个十进制整数：");
+			scanf("%d", &num);
+			while (num > 0) {//依次算出当前num的最后一位，然后记录在数组中
+				pop = num % 16;
+				result[i] = pop;
+				i++;
+				num /= 16;
+			}
+			printf("转化为十六进制的数为：0x");
+			for (i = i - 1; i >= 0; i--)
+				printf("%c", hex[result[i]]);
+		}
+		int main() { 
+			method();
+		}
+	5）调试过程遇到的问题及调试体会
+		使用了数组来储存16进制数，输出时候使用了元素对应数组的方法，极大简化的程序的复杂度
+18.	
+	1）题目
+		将数n反置。例如123变成321。1234变成4321
+	2）思路
+		倒序输出与转换进制类似，每次对n用进制也就是10取余，得到最后一位，然后让n对10取余，然后减少个位，
+		然后将余数这一位加到储存结果的rev中。然后重复以上步骤，直到n=0，rev则为倒序输出的结果。
+	3）伪代码描述的算法如下：
+		void method() {
+			input(n);
+			while (n != 0) do {//将整数倒序排列
+				pop = n % 10;
+				n /= 10;
+				rev = rev * 10 + pop;
+			}
+			print(rev);
+		}
+	4）源代码
+		#include <stdio.h>
+		void method() {
+			int rev = 0;
+			printf("请输入n\n");
+			int n;
+			scanf("%d", &n);
+			while (n != 0) {//将整数倒序排列
+				int pop = n % 10;
+				n /= 10;
+				rev = rev * 10 + pop;
+			}
+			printf("%d", rev);
+		}
+		int main()
+		{
+			method();
+		}
+	5）调试过程遇到的问题及调试体会
+		未使用多于的变量，使程序变得十分精简，而且时间复杂度较低。
+20.	
+	1）题目
+		输入min,max,factor三个整数,输出闭区间[min,max]上能被factor整除的整数的个数
+	2）思路
+		首先是区间问题，负区间等价于对称的正区间。之后是计算问题，算法为首先找到离min最近，并且在min右边的
+		第一个能被factor整除的数，顺便也可以判断在区间内是否存在情况。然后在存在的情况下计算出这个数和max
+		之间的距离，根据相邻的两个可以被统一个数整除的数之间的距离为被整除的数的大小，就可以算出剩下的存在个数了。
+	3）伪代码描述的算法如下：
+		int doCount(max,min,factor) {
+			找到离min最近的可以被factor整除的数的距离temp;
+			if(min就是最近的数) then {
+				count++；
+				跳过min，从第二个数开始;
+			}
+			length = max - min;//区间长度
+			if (区间内存在可以被整除的数) then
+			{
+				count++;
+				anotherLength = length - temp;//max到temp所在位置的距离
+				count += anotherLength / factor;
+			}
+			return count;
+		}
+		void method() {//区间问题
+			input(max, min, factor);
+			if (负区间) then  count = doCount(-min, -max, factor);
+			else if (左负右正) then count = doCount(-min, 0, factor) +doCount(max, 0, factor);
+			else  then  count = doCount(max, min, factor);
+			print(count);
+		}
+	4）源代码
+		#include <stdio.h>
+		int doCount(int max, int min, int factor) {
+			int count = 0;
+			int temp = factor - min % factor;//找到离min最近的可以被factor整除的数的距离
+			if (temp == factor) count++;//判断min为可整除的数
+			int length = max - min;//区间长度
+			if (temp <= length)//区间内存在可以被整除的数
+			{
+				count++;
+				int anotherLength = length - temp;//max到temp所在位置的距离
+				count += anotherLength / factor;
+			}
+			return count;
+		}
+		void method() {
+			int max, min, factor;
+			int count = 0;//记录个数
+			printf("请输入，max，min，factor\n");
+			scanf("%d%d%d", &max, &min, &factor);
+			if (max < 0)//全负
+				count = doCount(-min, -max, factor);
+			else if (min < 0) 	//一正一副
+				count = doCount(-min, 0, factor) +doCount(max, 0, factor);
+			else count = doCount(max, min, factor);//全正
+			printf("可以被整除的数的个数为%d", count);
+		}
+		int main()
+		{
+			method();
+		}
+	5）调试过程遇到的问题及调试体会
+		未使用遍历的方法，当区间跨度很长时极大减少了工作量，全部使用数学计算的方法完成了题目。

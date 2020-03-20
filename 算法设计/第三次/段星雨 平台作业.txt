@@ -1,0 +1,36 @@
+1）题目
+	基座A、B、c,开始时A基座上有64个盘子，盘子大小不等，大的在下，小的在上。
+	有一个老和尚想把这64个盘子从A座移到B座，但每次只允许移动一个盘子， 且
+	在移动过程中在3个基座上的盘子都始终保持大盘在下，小盘在上。在移动过程
+	中可以利用C基座做辅助。请编程打印出移动过程。
+2）思路
+	每次移动都是先将n-1个盘子移到过度的柱子，然后将n盘子移到目标盘子，然后再把n-1个盘子移到你、盘子上面
+3）伪代码
+	void HanNuo(n, a, b, c)
+	{
+		if (n == 1) then
+			printf(n, a, c);
+		else then
+		{
+			HanNuo(n - 1, a, c, b);
+			printf(n, a, c);
+			HanNuo(n - 1, b, a, c);
+		}
+	}
+4）源代码
+	void HanNuo(int n, char a, char b, char c)
+	{
+		//n:层数，a：最初的柱子，b：借助的柱子，c：目标柱子
+		if (n == 1)
+			printf("Move dish %d from %c to %c\n", n, a, c); //输出移动动作
+		else
+		{
+			HanNuo(n - 1, a, c, b);      //将a柱子上的从上到下n-1个盘移到b柱子上
+			printf("Move dish %d from %c to %c\n", n, a, c);
+			HanNuo(n - 1, b, a, c);      //将b柱子上的n-1个盘子移到c柱子上
+		}
+	}
+	void main()
+	{
+		HanNuo(3,'A','B','C');
+	}

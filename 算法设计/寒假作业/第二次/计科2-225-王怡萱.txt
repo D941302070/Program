@@ -1,0 +1,219 @@
+12.1题目：
+求任给的两个数的最小公倍数和最大公约数
+12.2思路：
+利用数学的欧几里德算法求出两数的最大公约数，利用两数乘积除以已求出的最大公约数可得最小公倍数
+12.3伪代码：
+int main()
+{
+	input(a,b);
+    m = a;
+	n = b;
+	if (n > m) then
+	{
+		z = m;
+		m = n;
+		n = z;
+	}
+	do
+	   {
+		q = m%n;
+		m = n;
+		n = q;
+	    } 
+	while (q != 0);
+	c = a*b / m;
+	printf(m,c);
+}
+12.4代码：
+#include<stdio.h>
+int main()
+{
+	int m,n,q,a,b,c;
+	scanf("%d%d", &a, &b);
+    m = a;
+	n = b;
+	if (n > m)
+	{
+		int z;
+		z = m;
+		m = n;
+		n = z;
+	}
+	do
+	   {
+		q = m%n;
+		m = n;
+		n = q;
+	    } 
+	while (q != 0);
+	c = a*b / m;
+	printf("最大公约数为%d\n",m );
+	printf("最小公倍数为%d\n",c);
+}
+12.5体会：
+此题的关键在于寻找合适的算法求解最大公约数
+
+
+13.1题目：
+编写程序对任给的一个整数n,判断它能否被3,5,7整除。输出下面信息之一。
+能同时被3,5,7整除
+能同时被其中两个数整除，要具体指出哪两个数。
+能被其中一个数整除,要具体指出被哪一个数整除
+不能被上述任一个数整除
+13.2思路：
+多次进行判断，当满足条件后就输出对应的结果
+13.3伪代码：
+void main()
+{
+	long a;
+	printf("input a number:\n");
+	scanf("%d",&a);
+	if(同时被3,5,7整除) then
+		输出结果;
+	else if(能同时被3,5整除) then
+		输出结果;
+	else if(能同时被5,7整除) then
+		输出结果;
+	else if(能同时被3,7整除) then
+		输出结果;
+	else if(被3整除) then
+		输出结果;
+}
+13.4代码：
+#include<stdio.h>
+void main()
+{
+	long a;
+	printf("input a number:\n");
+	scanf("%d",&a);
+	if(a%3==0&&a%5==0&&a%7==0)
+		printf("%d能同时被3,5,7整除\n",a);
+	else if(a%3==0&&a%5==0)
+		printf("%d能同时被3,5整除\n",a);
+	else if(a%5==0&&a%7==0)
+		printf("%d能同时被5,7整除\n",a);
+	else if(a%3==0&&a%7==0)
+		printf("%d能同时被3,7整除\n",a);
+	else if(a%3==0)
+		printf("%d能被3整除\n",a);
+}
+13.5体会：
+不需要繁琐的过程，直接判断出现结果
+
+
+
+16.1题目：
+任给一个十进制数，转换成16进制数
+16.2思路：
+对给出的十进制数用16进行取余运算记录余数即可依次算出相应的十六进制数
+16.3伪代码：
+#include "stdio.h"
+void main()
+{
+	char HEX[16] = {'0', '1', '2', 3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'}; //<----------------这里加了
+	input(num);
+	while(num>0)
+	{
+		yushu=num%16;
+		a[i]=yushu;
+		num=num/16;
+		i++;
+	}
+	输出;
+}
+16.4代码：
+#include "stdio.h"
+void main()
+{
+	char HEX[16] = {'0', '1', '2', 3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'}; //<----------------这里加了
+	int num;
+	printf("请输入一个十进制整数：");
+	scanf("%d",&num);
+	int a[10];
+	int i=0;
+	int yushu;
+	while(num>0)
+	{
+		yushu=num%16;
+		a[i]=yushu;
+		num=num/16;
+		i++;
+	}
+	printf("转化为十六进制的数为：");
+	for(;i>=0;i--)//倒序输出
+	{
+		printf("%c",HEX[a[i]]);
+	}
+	printf("\n");
+}
+16.5体会：此题在于考虑溢出问题，需用数组存储16进制数0-F
+
+
+
+
+18.1题目：
+将数n反置。例如123变成321。1234变成4321
+18.2思路：
+对n用10进行取余运算，余数即为原数的个位，减去余数，继续使用取余运算，重复即可得出反置数
+18.3伪代码：
+void main()
+{
+	input(a);
+	do
+	{
+		b *= 10;
+		b += a%10;
+		a /= 10;
+		}
+	while (a>0);
+	print(b);
+}
+18.4代码：
+#include<stdio.h>
+void main()
+{
+	int a,b=0;
+	scanf("%d",&a);
+	do
+	{
+		b *= 10;
+		b += a%10;
+		a /= 10;
+		}
+	while (a>0);
+	printf("%d", b);
+}
+18.5体会：此题在于想到使用取余运算进行求解，可使程序变得简单
+
+
+
+
+20.1题目：
+输入min,max,factor三个整数,输出闭区间[min,max]上能被factor整除的整数的个数
+20.2思路：
+使用循环依次对区间内每个数常识，然后得到个数
+20.3伪代码：
+void main()
+{
+	input( max, min, factor);
+	for	i=min to max do
+		if(i%factor==0)
+			count++;
+	}
+	print(count);
+}
+20.4代码：
+#include<stdio.h>
+void main()
+{
+	int max, min, factor;
+	int count = 0;
+	scanf("%d%d%d", &max, &min, &factor);
+	for(int i=min; i <= max; i++){
+		if(i%factor==0)
+			count++;
+	}
+	printf("个数为%d",count);
+}
+20.5体会：
+做到了不重不漏，每个结果都未遗漏

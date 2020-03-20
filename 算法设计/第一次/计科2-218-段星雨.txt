@@ -1,0 +1,227 @@
+3.
+	1）题目
+		输出对应矩阵
+	2）思路
+		创建一个对应矩阵，来储存元素，根据规律，可以知道输出顺序为最上边从左到右，右边从上到下……
+		由规律可知，总共四种情况。然后分类，分别对每一条边录入；
+	3）伪代码
+		void printMatrix() {
+			//h为行，l为列，相当于从矩阵的（0，-1）点开始
+			pointH = 0, pointL = -1;
+			//0为加，1为减
+			flagH = 0, flagL = 0;
+			while (!(pointH == pointL && pointH == 3)) do
+				//正对角线，行输出
+			{	if (pointH - pointL == 1|| pointH == pointL) then
+				{	if (flagH == 0) then
+					{	循环从左到右输出当前行；
+						pointL = i - 1;flagH = 1;}
+					else then
+					{	循环从右到左输出当前行；
+						pointL = i + 1;flagH = 0;}
+				//反对角线,列输出
+				else then
+				{	if (flagL == 0) then
+					{	循环从上到下输出当前列；
+						pointH = i - 1;flagL = 1;}
+					else then
+					{	循环从下到上输出当前列；；
+						pointH = i + 1;flagL = 0;}
+				}
+			}
+			遍历输出数组；
+		}
+	4）源代码
+		#include <stdio.h>
+		int nums[7][7] =
+			{{0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0}};
+		void printMatrix() {
+			//h为行，l为列
+			int pointH = 0, pointL = -1;
+			//0为加，1为减
+			int flagH = 0, flagL = 0;
+			//录入的数字
+			int count = 1;
+			while (!(pointH == pointL && pointH == 3)) {
+				//正对角线，行输出，上面加，下面减
+				if (pointH - pointL == 1|| pointH == pointL) {
+					if (flagH == 0) {
+						//输出
+						int i = pointL + 1;
+						for (;i < 7 && nums[pointH][i] == 0; i++)
+							nums[pointH][i] = count++;
+						//更新指针
+						pointL = i - 1;
+						flagH = 1;
+					}
+					else {
+						int i = pointL - 1;
+						//输出
+						for (; i > -1 && nums[pointH][i] == 0; i--)
+							nums[pointH][i] = count++;
+						//更新指针
+						pointL = i + 1;
+						flagH = 0;
+					}
+				}
+				//反对角线,列输出，右面加，左面减
+				else {
+					if (flagL == 0) {
+						int i = pointH + 1;
+						for (; i < 7 && nums[i][pointL] == 0; i++)
+							nums[i][pointL] = count++;
+						pointH = i - 1;
+						flagL = 1;
+					}
+					else {
+						int i = pointH - 1;
+						for (; i > -1 && nums[i][pointL] == 0; i--)
+							nums[i][pointL] = count++;
+						pointH = i + 1;
+						flagL = 0;
+					}
+				}
+			}
+			for (int i = 0; i < 7; i++){
+				for (int j = 0; j < 7; j++)
+					printf("%2d ",nums[i][j]);
+				printf("\n");
+			}
+		}
+		int main() { 
+			printMatrix();
+		}
+	
+11
+	1）题目
+		请编程求1×2×3×..×n所得的数末尾有多少个0? (n由键盘输人，1000< n <10000)
+	2）思路
+		因为直接求出结果再看0的话，可能数据无法储存，所以要找到0出现的原因。以为式子为因式，所以通过因式分解
+		可以知道0的出现是2和5相乘的结果，又因为5的个数远远小于2，所以因式中5的个数也就是结果末尾0的个数；
+	3）伪代码
+		void findZero() {
+			input(n);
+			fiveCount = 0;
+			for i = 2 to n do
+			{	//找5的倍数
+				tem = i;
+				while (tem % 5 == 0) do
+				{	tem /= 5;
+					fiveCount++;}
+			}
+			print(fiveCount);
+		}
+	4）源代码
+		#include <stdio.h>
+		void findZero() 
+			int n;
+			printf("请输入n\n");
+			scanf("%d", &n);
+			int fiveCount = 0;
+			for (int i = 5; i <= n; i++)
+			{
+				//找5的倍数
+				int tem = i;
+				while (tem % 5 == 0)
+				{
+					tem /= 5;
+					fiveCount++;
+				}
+			}
+			printf("末尾有%d个0",fiveCount);
+		}
+		int main() {
+			findZero();
+		}
+	
+13	
+	1）题目
+		A,B,C,D,E 5人为某次竞赛的前五名,他们在名次公布前猜名次。
+		A说: B得第三名,C得第五名。
+		B说: D得第二名,E得第四名。
+		C说: B得第一名,E得第四名。
+		D说: C得第一名,B得第二名。
+		E说: D得第二名,A得第三名。
+		结果每个人都猜对了一半,实际名次是什么呢?
+	2）思路
+		通过多次for循环可以组合出abcde的不同结果，然后假设每一人的一句话正确，判断之后最后输出结果
+	3）伪代码
+		void truthNum() {
+			for a = 1 to 5 do
+				for b = 1 to 5 do
+					if (b与上层数不相等) then
+						for c = 1 to 5 do
+							if (c与上层数不相等) then
+								for d = 1 to 5 do
+									if (d与上层数不相等) then
+									{
+										e = 15 - a - b - c - d;
+										if (e与上层数不相等)then
+											if ((((b == 3) + (c == 5)) == 1) && (((d == 2) + (e == 4)) == 1) && (((b == 1) + (e == 4)) == 1) && (((c == 1) + (b == 2)) == 1) && (((d == 2) + (a == 3)) == 1))
+											then print(a, b, c, d, e);}
+		}
+	4）源代码
+		#include <stdio.h>
+		void truthNum() {
+			int a, b, c, d, e;
+			for (a = 1; a <= 5; a = a + 1)
+				for (b = 1; b <= 5; b = b + 1)
+					if (a != b)
+						for (c = 1; c <= 5; c = c + 1)
+							if (c != a && c != b)
+								for (d = 1; d <= 5; d = d + 1)
+									if (d != a && d != b && d != c)
+									{
+										e = 15 - a - b - c - d;
+										if (e != a && e != b && e != c && e != d)
+											if ((((b == 3) + (c == 5)) == 1) && (((d == 2) + (e == 4)) == 1) && (((b == 1) + (e == 4)) == 1) && (((c == 1) + (b == 2)) == 1) && (((d == 2) + (a == 3)) == 1))
+												printf("实际名次是：a=%d，b=%d，c=%d，d=%d，e=%d", a, b, c, d, e);
+									}
+		}
+		int main() {
+			truthNum();
+		}
+	
+14	
+	1）题目
+		编写算法求满足以下条件的3位整数n:它是完全平方数，其中又有两位数字相同,如144、676等。
+	2）思路
+		首先3位数的完全平方数只有100~961，然后在其中将所有的完全平方数找到，并拆分每一位，然后出只有两位相等
+	3）伪代码
+		void findNum() {
+			for i = 10 to 31 do
+			{	num = i * i;
+				tem = num;
+				n1 = num % 10;//个位
+				num /= 10;
+				n2 = num % 10;//十位
+				num /= 10;
+				n3 = num;//百位
+				if (n1 == n2 || n1 == n3 || n2 == n3) then print(tem);}
+		}
+	4）源代码
+		#include <stdio.h>
+		void findNum() {
+			printf("满足条件的数为：");
+			for (int i = 10; i <= 31; i++)
+			{
+				int num = i * i;
+				int tem = num, n1, n2, n3;
+				n1 = num % 10;
+				num /= 10;
+				n2 = num % 10;
+				num /= 10;
+				n3 = num;
+				if (n1 == n2 || n1 == n3 || n2 == n3)
+					printf(" %d ", tem);
+			}
+		}
+		int main() {
+			findNum();
+		}
