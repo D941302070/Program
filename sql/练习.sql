@@ -132,3 +132,6 @@ SELECT * FROM student LIMIT 0,3; -- 第1页
 SELECT * FROM student LIMIT 3,3; -- 第2页
 
 -- 公式：开始的索引 = (当前的页码 - 1) * 每页显示的条数
+
+
+INSERT INTO student VALUES(9, NULL, 28, NULL, '西安', null, null);
