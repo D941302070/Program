@@ -1,0 +1,94 @@
+9
+	1）题目
+		利用分治法求一一组数据中最大的两个数和最小的两个数。
+	2）思路
+	3）伪代码
+	4）源代码
+		#include <stdio.h>
+		int max = -2147483647;
+		int lowerMax = -2147483647;
+		int min = 2147483647;
+		int upperMin = 2147483647;
+		void compute(int* array, int a, int b) {
+			int temMax, temMin;
+			if (array[a] >= array[b]) {
+				temMax = array[a];
+				temMin = array[b];
+			}
+			else {
+				temMax = array[b];
+				temMin = array[a];
+			}
+			if (temMax > max) {
+				lowerMax = max;
+				max = temMax;
+				if (temMin > lowerMax && temMin != temMax)
+					lowerMax = temMin;
+			}
+			else if (temMax > lowerMax)
+				lowerMax = temMax;
+
+			if (temMin < min) {
+				upperMin = min;
+				min = temMin;
+				if (temMax < upperMin && temMin != temMax)
+					upperMin = temMax;
+			}
+			else if (temMax < lowerMax)
+				upperMin = temMin;
+		}
+		void choose(int* array, int start, int end) {
+			if (end == start || end - start == 1) {
+				compute(array, start, end);
+				return;
+			}
+			choose(array, start, (start + end) / 2);
+			choose(array, (start + end) / 2 + 1, end);
+		}
+		main() {
+			int n;
+			printf("请输入要计算的个数：\n");
+			scanf("%d", &n);
+			int* array;
+			array = (int*)calloc(n + 1, sizeof(int));
+			printf("请输入数据\n");
+			for (int i = 1; i <= n; i++)
+				scanf("%d", &array[i]);
+			choose(array, 1, n);
+			printf("最大数为%d\n",max);
+			printf("第二大数为%d\n", lowerMax);
+			printf("最小数为%d\n", min);
+			printf("第二小数为%d\n", upperMin);
+		}
+10
+	1）题目
+		利用分治法求一组数据的和。
+	2）思路
+	3）伪代码
+	4）源代码
+		#include <stdio.h>
+		int sum = 0;
+		void add(int* array, int start, int end) {
+			if (end == start) {
+				sum += array[end]; 
+				return;
+			}
+			if (start - end == 1) {
+				sum += array[end] + array[end]; 
+				return;
+			}
+			add(array, start, (start + end) / 2);
+			add(array, (start + end) / 2 + 1, end);
+		}
+		main() {
+			int n;
+			printf("请输入要计算的个数：\n");
+			scanf("%d", &n);
+			int* array;
+			array = (int*)calloc(n + 1, sizeof(int));
+			printf("请输入数据\n");
+			for (int i = 1; i <= n; i++)
+				scanf("%d", &array[i]);
+			add(array, 1, n);
+			printf("答案为%d\n",sum);
+		}
