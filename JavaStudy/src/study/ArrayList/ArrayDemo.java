@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.ArrayList_api;
+package study.ArrayList;
 
 /**
  * 定义一个数组用来储存3个person对象
