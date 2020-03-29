@@ -1,4 +1,4 @@
-package XueXiJiLu.Polymorphism.demo2;
+package study.Polymorphism.demo2;
 /*
 访问变量的两种方法：
 1.直接通过对象名访问变量：看等号左边是谁，有限用谁，找不到则向上找

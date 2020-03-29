@@ -1,4 +1,4 @@
-package XueXiJiLu.Polymorphism.demo03;
+package study.Polymorphism.demo03;
 
 public class Cat extends Animal {
 

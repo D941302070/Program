@@ -1,4 +1,4 @@
-package XueXiJiLu.InterFace.Static;
+package study.InterFace.Static;
 
 
 /**

@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.list;
+package study.list;
 
 import java.util.LinkedList;
 

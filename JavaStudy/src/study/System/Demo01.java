@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.System;
+package study.System;
 
 import java.util.Arrays;
 

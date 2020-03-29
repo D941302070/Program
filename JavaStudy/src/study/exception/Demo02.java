@@ -1,4 +1,4 @@
-package XueXiJiLu.exception;
+package study.exception;
 
 /*
 异常产生的过程解析（分析异常是怎么产生的，如何处理异常）

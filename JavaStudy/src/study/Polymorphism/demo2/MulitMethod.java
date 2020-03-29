@@ -1,4 +1,4 @@
-package XueXiJiLu.Polymorphism.demo2;
+package study.Polymorphism.demo2;
 /*
 多态中成员方法的使用规则：
     看new的是谁就优先是谁，没有则向上找

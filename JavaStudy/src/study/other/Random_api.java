@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.other;
+package study.other;
 
 import java.util.Random;
 import java.util.Scanner;

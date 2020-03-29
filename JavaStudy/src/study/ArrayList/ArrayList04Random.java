@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.ArrayList_api;
+package study.ArrayList;
 
 import java.util.ArrayList;
 import java.util.Random;

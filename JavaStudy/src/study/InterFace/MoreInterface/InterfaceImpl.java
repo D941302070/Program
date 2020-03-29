@@ -1,4 +1,4 @@
-package XueXiJiLu.InterFace.MoreInterface;
+package study.InterFace.MoreInterface;
 
 public class InterfaceImpl  implements InterfaceA,InterfaceB{
     @Override

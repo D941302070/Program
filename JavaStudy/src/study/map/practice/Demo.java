@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.map.practice;
+package study.map.practice;
 
 import java.util.HashMap;
 import java.util.Map;

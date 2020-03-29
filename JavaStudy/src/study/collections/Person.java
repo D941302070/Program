@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.collections;
+package study.collections;
 
 public class Person implements Comparable<Person> {
     private String name;

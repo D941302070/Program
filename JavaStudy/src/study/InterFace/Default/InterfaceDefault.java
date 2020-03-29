@@ -1,4 +1,4 @@
-package XueXiJiLu.InterFace.Default;
+package study.InterFace.Default;
 
 /**
  * 从java8开始，接口里如需定义默认方法

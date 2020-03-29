@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.String_api;
+package study.String;
 
 /**
  * 字符串转换

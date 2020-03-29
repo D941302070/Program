@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.Arrays;
+package study.Arrays;
 
 import java.util.Arrays;
 

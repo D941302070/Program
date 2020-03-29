@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.ArrayList_api;
+package study.ArrayList;
 
 public class Student {
     private String name;

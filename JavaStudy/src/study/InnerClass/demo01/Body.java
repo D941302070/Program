@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo01;
+package study.InnerClass.demo01;
 
 public class Body {//外部类
 

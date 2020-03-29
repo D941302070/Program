@@ -1,4 +1,4 @@
-package XueXiJiLu.InterFace.Const;
+package study.InterFace.Const;
 
 /**
  * 接口中也可以定义“成员变量”,但必须用 public static final修饰

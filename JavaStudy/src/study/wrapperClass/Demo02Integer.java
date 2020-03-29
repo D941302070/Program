@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.wrapperClass;
+package study.wrapperClass;
 
 /*
 自动装箱与自动拆箱：基本类型的数据包装类之间可以自动的相互相互转换

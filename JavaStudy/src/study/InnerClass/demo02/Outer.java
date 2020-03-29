@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo02;
+package study.InnerClass.demo02;
 
 //如果出现了重名现象，那么格式是：外部类名称.this。外部变量名
 public class Outer {

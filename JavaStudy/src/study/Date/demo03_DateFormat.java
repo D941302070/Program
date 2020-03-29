@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.Date;
+package study.Date;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

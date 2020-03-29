@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.hasCode;
+package study.hasCode;
 
 public class Person {
 }

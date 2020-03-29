@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.String_api;
+package study.String;
 /**
  * equals比较内容
  * equalsIgnoreCase忽略大小写比较内容

@@ -1,4 +1,4 @@
-package XueXiJiLu.FengZhuang;
+package study.FengZhuang;
 
 //单一职责原则
 public class CatTest {

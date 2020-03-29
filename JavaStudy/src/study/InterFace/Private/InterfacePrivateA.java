@@ -1,4 +1,4 @@
-package XueXiJiLu.InterFace.Private;
+package study.InterFace.Private;
 
 /**
  * 问题描述：

@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo03;
+package study.InnerClass.demo03;
 /*
 局部内部类：如果需要访问所在方法的局部变量，那么这个变量必须是有效final的
  */

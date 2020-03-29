@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.collections;
+package study.collections;
 
 public class Student {
     private String name;

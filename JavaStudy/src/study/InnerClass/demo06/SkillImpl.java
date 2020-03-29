@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo06;
+package study.InnerClass.demo06;
 
 public class SkillImpl implements Skill {
     @Override

@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.StringBuilder;
+package study.StringBuilder;
 /*
 java.lang.StringBuilder类：字符串缓冲区，可以提高字符串效率
 构造方法：

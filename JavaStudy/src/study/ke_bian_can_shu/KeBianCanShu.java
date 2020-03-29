@@ -1,4 +1,4 @@
-package XueXiJiLu.ke_bian_can_shu;
+package study.ke_bian_can_shu;
 
 /**
  * 关于可变参数的问题

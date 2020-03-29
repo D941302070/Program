@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.generic;
+package study.generic;
 /*
 定义一个含有泛型的类，模拟ArrayList集合
 泛型一个未知的数据类型，当我们不确定什么数据类型的时候，可以使用泛型

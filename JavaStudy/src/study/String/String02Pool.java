@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.String_api;
+package study.String;
 
 /**
  * 字符串直接写的在常量池中，new的对象不在池里

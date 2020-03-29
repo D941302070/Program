@@ -1,4 +1,4 @@
-package XueXiJiLu.model;
+package study.model;
 
 public class Student {
     // 成员属性：学号、姓名、性别、年龄、专业

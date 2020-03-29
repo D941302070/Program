@@ -1,4 +1,4 @@
-package XueXiJiLu.AbstractClass;
+package study.abstractClass;
 
 public class Cat extends Animal {
     @Override

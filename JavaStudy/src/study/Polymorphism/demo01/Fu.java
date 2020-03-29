@@ -1,4 +1,4 @@
-package XueXiJiLu.Polymorphism.demo01;
+package study.Polymorphism.demo01;
 
 public class Fu {
 

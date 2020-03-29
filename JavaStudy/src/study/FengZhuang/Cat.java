@@ -1,4 +1,4 @@
-package XueXiJiLu.FengZhuang;
+package study.FengZhuang;
 
 /**
  * 宠物猫类

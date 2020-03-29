@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo05;
+package study.InnerClass.demo05;
 
 public class Hero {
 

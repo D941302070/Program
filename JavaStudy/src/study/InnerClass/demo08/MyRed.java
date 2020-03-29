@@ -1,6 +1,6 @@
-package XueXiJiLu.InnerClass.demo08;
+package study.InnerClass.demo08;
 
-import XueXiJiLu.InnerClass.red.RedPacketFrame;
+import study.InnerClass.red.RedPacketFrame;
 
 public class MyRed extends RedPacketFrame {
     /**

@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.generic;
+package study.generic;
 
 import java.util.ArrayList;
 import java.util.Iterator;

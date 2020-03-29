@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.wrapperClass;
+package study.wrapperClass;
 /*
 装箱：把基本类型的数据，包装到包装类中（基本类型的数据->包装类）
     构造方法：

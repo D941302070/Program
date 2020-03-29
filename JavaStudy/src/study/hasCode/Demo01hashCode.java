@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.hasCode;
+package study.hasCode;
 /*
 哈希值：是一个十进制整数，由系统随机给出（就是对象的地址值，是一个逻辑地址，是模拟出来的地址不是数据实际存储的物理地址）
 在Object类里有一个方法，可以获取对象的哈希值

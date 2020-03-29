@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo03;
+package study.InnerClass.demo03;
 
 /*
 如果一个类实在方法内部中定义的，娜美这就是一个局部内部类

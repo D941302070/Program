@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo04;
+package study.InnerClass.demo04;
 
 public class MyInterfaceImpl implements MyInterface {
 

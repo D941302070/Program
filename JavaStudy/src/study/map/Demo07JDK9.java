@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.map;
+package study.map;
 
 import java.util.List;
 import java.util.Map;

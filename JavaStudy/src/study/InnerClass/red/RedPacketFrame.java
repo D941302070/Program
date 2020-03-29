@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.red;
+package study.InnerClass.red;
 
 
 import javax.swing.*;

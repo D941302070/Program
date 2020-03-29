@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.other;
+package study.other;
 /**
  * @author 八级大哥段
  *

@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.StringBuilder;
+package study.StringBuilder;
 /*
 StringBuild和String可以相互转换；
     String->StringBuilder：可以使用StringBuilder

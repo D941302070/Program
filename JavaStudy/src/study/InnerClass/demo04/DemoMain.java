@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo04;
+package study.InnerClass.demo04;
 /*
 如果接口的实现类（或者是父类的子类），只需要使用唯一的一次
 那么这种情况下可以省略该类的定义，使用匿名内部类

@@ -1,4 +1,4 @@
-package XueXiJiLu.InterFace.Const;
+package study.InterFace.Const;
 
 public class Interface05 {
 

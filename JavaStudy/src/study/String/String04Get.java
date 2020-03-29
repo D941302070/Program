@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.String_api;
+package study.String;
 
 /**
  * @author 八级大哥段

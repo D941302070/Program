@@ -1,4 +1,4 @@
-package XueXiJiLu.InterFace.Abstract;
+package study.InterFace.Abstract;
 
 /**
  * 接口

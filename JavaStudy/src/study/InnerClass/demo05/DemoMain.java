@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo05;
+package study.InnerClass.demo05;
 /*
 类作为成员变量类型
  */

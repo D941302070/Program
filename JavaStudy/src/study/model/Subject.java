@@ -1,4 +1,4 @@
-package XueXiJiLu.model;
+package study.model;
 
 
 /**

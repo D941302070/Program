@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo01;
+package study.InnerClass.demo01;
 
 /*
 一个事物内部包含另一个事物，那么这就是一个类内部包含另一个类

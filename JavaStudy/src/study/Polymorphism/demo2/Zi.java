@@ -1,4 +1,4 @@
-package XueXiJiLu.Polymorphism.demo2;
+package study.Polymorphism.demo2;
 
 public class Zi extends Fu {
 

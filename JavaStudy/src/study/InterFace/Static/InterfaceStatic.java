@@ -1,4 +1,4 @@
-package XueXiJiLu.InterFace.Static;
+package study.InterFace.Static;
 
 /**
  * 从java8开始，接口中允许定义静态方法

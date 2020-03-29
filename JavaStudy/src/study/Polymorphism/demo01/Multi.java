@@ -1,4 +1,4 @@
-package XueXiJiLu.Polymorphism.demo01;
+package study.Polymorphism.demo01;
 
 /**
  * 代码中体现多态性，祈使句就是一句话，父类引用指向子类对象

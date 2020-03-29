@@ -1,4 +1,4 @@
-package XueXiJiLu.InterFace.MoreInterface;
+package study.InterFace.MoreInterface;
 
 public interface InterfaceA {
 

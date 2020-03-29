@@ -1,4 +1,4 @@
-package XueXiJiLu.Polymorphism.demo04;
+package study.Polymorphism.demo04;
 
 public class Computer {
 

@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.other;
+package study.other;
 
 /**
  * scanner类的部分用法

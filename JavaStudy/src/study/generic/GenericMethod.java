@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.generic;
+package study.generic;
 /*
 定义含有泛型的方法：泛型定义在方法的修饰符和返回值之间
 

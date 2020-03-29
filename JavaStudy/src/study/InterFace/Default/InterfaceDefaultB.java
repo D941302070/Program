@@ -1,4 +1,4 @@
-package XueXiJiLu.InterFace.Default;
+package study.InterFace.Default;
 
 public class InterfaceDefaultB implements InterfaceDefault {
     @Override

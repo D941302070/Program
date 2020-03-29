@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.map.doudizhu;
+package study.map.doudizhu;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.Object;
+package study.Object;
 
 import java.util.ArrayList;
 import java.util.Random;

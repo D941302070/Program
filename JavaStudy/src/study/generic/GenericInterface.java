@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.generic;
+package study.generic;
 /*
 定义含有泛型的接口
  */

@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo03;
+package study.InnerClass.demo03;
 
 public class demoMain {
 

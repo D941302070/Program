@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.wrapperClass;
+package study.wrapperClass;
 
 /*
 基本类型和字符串类型之间的相互转换

@@ -1,6 +1,4 @@
-package XueXiJiLu.Api.String_api;
-
-import java.util.Scanner;
+package study.String;
 
 /**
  *

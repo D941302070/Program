@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.collection;
+package study.collection;
 
 import java.util.ArrayList;
 

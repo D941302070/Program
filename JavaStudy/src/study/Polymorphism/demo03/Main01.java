@@ -1,4 +1,4 @@
-package XueXiJiLu.Polymorphism.demo03;
+package study.Polymorphism.demo03;
 /*
 对象的向上转型就是多态写法
 格式：父类名称 对象名 = new 子类对象();

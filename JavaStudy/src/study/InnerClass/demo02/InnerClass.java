@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo02;
+package study.InnerClass.demo02;
 
 public class InnerClass {
 

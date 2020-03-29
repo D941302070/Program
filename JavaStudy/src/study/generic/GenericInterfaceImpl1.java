@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.generic;
+package study.generic;
 /*
 含有泛型的接口第一种使用方式：定义接口的实现类，实现接口，指定接口类型
  */

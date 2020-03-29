@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.generic;
+package study.generic;
 
 public class Demo03GenericMethod {
     public static void main(String[] args) {

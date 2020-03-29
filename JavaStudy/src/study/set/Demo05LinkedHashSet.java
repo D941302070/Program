@@ -1,4 +1,4 @@
-package XueXiJiLu.Api.set;
+package study.set;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;

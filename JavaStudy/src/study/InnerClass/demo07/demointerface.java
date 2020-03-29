@@ -1,4 +1,4 @@
-package XueXiJiLu.InnerClass.demo07;
+package study.InnerClass.demo07;
 
 import java.util.ArrayList;
 import java.util.List;
