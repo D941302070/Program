@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun() {
+            alert("我被点了");
+        }
+        var light2 = document.getElementById("light2");
+        light2.onclick = fun;
+    </script>
+</head>
+
+<body>
+    <!-- 第一种 -->
+    <img id="light" src="./案例/高级/案例1-电灯开关/img/off.gif" onclick="fun();">
+    <!-- 第二种 -->
+    <img id="light2" src="./案例/高级/案例1-电灯开关/img/off.gif">
+    <script>
+        function fun() {
+            alert("我被点了");
+        }
+        var light2 = document.getElementById("light2");
+        light2.onclick = fun;
+    </script>
+</body>
+
+</html>

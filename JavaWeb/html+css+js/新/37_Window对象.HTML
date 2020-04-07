@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <input id="openBtn" type="button" value="打开窗口">
+    <input id="closeBtn" type="button" value="关闭打开的窗口">
+    <script>
+        //window.alert("sfsf");
+
+        var flag = confirm("确定对出吗？");
+        if (flag) {
+            close();
+        } else {
+
+        }
+        //输入框
+        var result = prompt("请输入用户名");
+
+
+        var openBtn = document.getElementById("openBtn");
+        var newWindow;
+        openBtn.onclick = function() {
+            //打开一个姓窗口
+            newWindow = open("https://www.baidu.com");
+        }
+        var closeBtn = document.getElementById("closeBtn");
+        closeBtn.onclick = function() {
+            //关闭newWindow窗口
+            newWindow.close();
+        }
+
+        //一次性定时器
+        function fun() {
+            alert('boom');
+        }
+        var id1 = setTimeout(fun, 3000);
+        //取消一次性定时器
+        clearTimeout(id);
+        //循环定时器
+        var id2 = setInterval(fun, 1000);
+        //取消循环性定时器
+        clearInterval(id2);
+
+        var h1 = window.history;
+        var h2 = history;
+    </script>
+</body>
+
+</html>

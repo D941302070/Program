@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <img src="./案例/高级/案例1-电灯开关/img/off.gif" id="light">
+    <h1 id="title">啦啦啦</h1>
+    <script>
+        //通过id获取元素
+        var light = document.getElementById("light");
+        alert("我要换图片了");
+        light.src = "./案例/高级/案例1-电灯开关/img/on.gif"
+
+        //1.获取h1标签对象
+        var title = document.getElementById("title");
+        //2.修改内容
+        alert("我要换内容");
+        title.innerHTML = "呵呵呵"
+    </script>
+</body>
+
+</html>

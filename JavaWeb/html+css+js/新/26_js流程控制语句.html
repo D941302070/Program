@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a = 1;
+        switch (a) {
+            case 1:
+                alert("number");
+                break;
+            case "abc":
+                alert("string");
+                break;
+            case true:
+                alert("boolean");
+                break;
+            case null:
+                alert("null");
+                break;
+            case undefined:
+                alert("undefined");
+        }
+
+        //求和
+        var sum = 0;
+        var num = 1;
+        while (num <= 100) {
+            sum += num;
+            num++;
+        }
+        document.write(sum + "<br>");
+
+        sum = 0;
+        for (var i = 1; i <= 100; i++)
+            sum += i;
+        document.write(sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

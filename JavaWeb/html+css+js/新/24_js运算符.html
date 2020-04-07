@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //正负号，+或-
+        //在js中，如果运算数不是运算符所要求的类型，那么js引擎会自动将运算数进行类型转换
+        //string转number，按字面值转换，如果不是数字，转化为NaN
+        var a = +"123";
+        document.write(a + 1); //124
+        document.write("<br>");
+
+        var b = +"abe";
+        document.write(b); //NaN
+        document.write("<br>");
+
+        //boolean转num，true转1，false转0
+        var flag = +true;
+        var f2 = +false;
+        document.write(flag);
+        document.write("<br>");
+        document.write(f2);
+        document.write("<br>");
+
+        //比较运算符
+        //1.类型相同：直接比较
+        //   字符串：按字典顺序比较
+        //2.类型不同：先转换，在比较
+        //   ===:全等于，比较之间先判断类型，如果类型不同，直接返回false
+
+        document.write(3 > 4);
+        document.write("<br>");
+        document.write("abc" > "acb");
+        document.write("<br>");
+
+        document.write("123" > 123);
+        //"123"先转换为number
+        document.write("<hr>");
+
+
+        //逻辑运算符：&&和||有短路效果
+        //其他类型转boolean
+        //number：0和NaN为假，非0为真
+        //string:除了空字符串，其他全是true
+        //null&&undefined:都为false
+        //对象：都为true
+        var f = true;
+        document.write(f);
+        document.write("<br>");
+        document.write(!f);
+        document.write("<hr>");
+
+        var n1 = 3;
+        var n2 = 0;
+        var n3 = NaN;
+        document.write(!!n1);
+        document.write("<br>");
+        document.write(!!n2);
+        document.write("<br>");
+        document.write(!!n3);
+        document.write("<hr>");
+
+        var s1 = "fef";
+        var s2 = "";
+        document.write(!!s1);
+        document.write("<br>");
+        document.write(!!s2);
+        document.write("<hr>");
+
+
+        var o1 = null;
+        var o2;
+        var date = new Date();
+        document.write(!!o1);
+        document.write("<br>");
+        document.write(!!o2);
+        document.write("<br>");
+        document.write(!!date);
+        document.write("<hr>");
+    </script>
+</body>
+
+</html>

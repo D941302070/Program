@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="./案例/高级/案例2-轮播图/img/banner_1.jpg" width="100%" id="img">
+    <script>
+        var img = document.getElementById("img");
+        var num = 1;
+
+        function fun() {
+            num++;
+            if (num == 4) num = 1;
+            img.src = "./案例/高级/案例2-轮播图/img/banner_" + num + ".jpg";
+        }
+        setInterval(fun, 3000);
+    </script>
+</body>
+
+</html>

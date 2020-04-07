@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" id="form">
+        <input id="username">
+        <select id="city">
+            <option>--请选择--</option>
+            <option>北京</option>
+            <option>上海</option>
+            <option>西安</option>
+        </select>
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        //2.加载完成
+        window.onload = function() {
+            //加载完成后的语句
+            //1.失去焦点
+            // document.getElementById("username").onblur = function() {
+            //     alert("失去焦点");
+            // }
+
+            //3.绑定鼠标事件，移动到元素之上
+            // document.getElementById("username").onmouseover = function() {
+            //     alert("鼠标过来了");
+            // }
+
+            //4.绑定鼠标事件，点击事件
+            // document.getElementById("username").onmousedown = function(event) {
+            //     //event.button为鼠标点击的按键
+            //     alert("鼠标点击");
+            // }
+
+            //5.键盘事件
+            // document.getElementById("username").onkeydown = function(event) {
+            //     //event.keyCode为按下的按键
+            //     if (event.keyCode == 13) {
+            //         //13为回车
+            //         alert("提交表单");
+            //     };
+            // }
+
+            //6.选择和改变
+            // document.getElementById("city").onchange = function() {
+            //     alert("下拉列表内容改变");
+            // }
+
+            //6.选择和改变
+            document.getElementById("city").onchange = function() {
+                alert("下拉列表内容改变");
+            }
+
+            document.getElementById("form").onsubmit = function() {
+                //用户名格式是否正确
+                var flag = true;
+                return flag; //允许提交
+            };
+            //在标签里定义onsubmit阻止提交，使用 "return fun()"
+        }
+    </script>
+</body>
+
+</html>

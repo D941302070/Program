@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            border: 1px solid;
+            margin: auto;
+            width: 500px;
+        }
+        
+        td,
+        th {
+            text-align: center;
+            border: 1px solid;
+        }
+        
+        div {
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+        <input type="text" id="id" placeholder="请输入编号">
+        <input type="text" id="name" placeholder="请输入姓名">
+        <input type="text" id="gender" placeholder="请输入性别">
+        <input type="button" value="添加" id="btn_add">
+
+    </div>
+
+
+    <table>
+        <caption>学生信息表</caption>
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>操作</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>令狐冲</td>
+            <td>男</td>
+            <td><a href="javascript:void(0);" onclick="del_tr(this)">删除</a></td>
+            <!-- this是当前对象 -->
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>任我行</td>
+            <td>男</td>
+            <td><a href="javascript:void(0);" onclick="del_tr(this)">删除</a></td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>岳不群</td>
+            <td>?</td>
+            <td><a href="javascript:void(0);" onclick="del_tr(this)">删除</a></td>
+        </tr>
+
+
+    </table>
+    <script>
+        //使用node修改
+        /*
+        //1.给添加按钮绑定单机事件
+        document.getElementById("btn_add").onclick = function() {
+            //2.获取文本框内容
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var gender = document.getElementById("gender").value;
+
+            //3.创建td，设置td的文本为文本框内容
+            var td_id = document.createElement("td");
+            td_id.appendChild(document.createTextNode(id));
+            var td_name = document.createElement("td");
+            td_name.appendChild(document.createTextNode(name));
+            var td_gender = document.createElement("td");
+            td_gender.appendChild(document.createTextNode(gender));
+            //a标签td
+            var td_del = document.createElement("td");
+            var del = document.createElement("a");
+            del.setAttribute("href", "javascript:void(0);"); //添加href属性
+            del.setAttribute("onclick", "del_tr(this)"); //添加onclick属性
+            del.appendChild(document.createTextNode("删除"));
+            td_del.appendChild(del);
+
+            //4.创建tr
+            var tr = document.createElement("tr");
+            //5.将td添加到tr中
+            tr.appendChild(td_id);
+            tr.appendChild(td_name);
+            tr.appendChild(td_gender);
+            tr.appendChild(td_del);
+
+            //6.获取table，将tr添加到table中
+            var table = document.getElementsByTagName("table")[0];
+            table.appendChild(tr);
+        }*/
+
+        //使用innerHTML修改
+        document.getElementById("btn_add").onclick = function() {
+            //2.获取文本框内容
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var gender = document.getElementById("gender").value;
+
+            //获取table
+            var table = document.getElementsByTagName("table")[0];
+            //追加一行
+            table.innerHTML += "<tr>" +
+                "<td>" + id + "</td>" +
+                "<td>" + name + "</td>" +
+                "<td>" + gender + "</td>" +
+                "<td><a href=\"javascript:void(0);\" onclick=\"del_tr(this)\">删除</a></td>" +
+                "</tr>";
+        }
+
+        function del_tr(obj) {
+            //obj是a标签的对象
+            var table = obj.parentNode.parentNode.parentNode;
+            var tr = obj.parentNode.parentNode;
+            table.removeChild(tr);
+        }
+    </script>
+
+</body>
+
+</html>

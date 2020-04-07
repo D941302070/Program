@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="btn" value="获取历史记录个数">
+    <a href="38_案例_轮播图.html">轮播图</a>
+    <input type="button" id="forward" value="前进">
+
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            document.write(history.length);
+        }
+        var forward = document.getElementById("forward");
+        forward.onclick = function() {
+            history.forward();
+        }
+    </script>
+</body>
+
+</html>
