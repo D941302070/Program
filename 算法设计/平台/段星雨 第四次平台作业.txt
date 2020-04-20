@@ -1,0 +1,403 @@
+1
+	1）题目
+		利用分治法求一一组数据中最大的两个数和最小的两个数。
+	2）思路
+		用索引拆分数组，然后分到不可分位置进行比较求出结果
+	3）伪代码
+		void max_min(int a[],int m,int n,int *min1,int *min2,int *max1,int *max2)
+		{ 
+			if(m==n) then  *min1=*min2=*max1=*max2=a[m]; 
+			else then
+				if(m==n-1) then
+					if(a[m]<a[n]) then
+					{*min1=a[m];*min2=a[n];*max1=a[n];*max2=a[m];}
+					else then
+					{*min1=a[n];*min2=a[m];*max1=a[m];*max2=a[n];}}
+				else then
+				{
+					mid=(m+n)/2;
+					max_min(a,m,mid,&lmin1,&lmin2,&lmax1,&lmax2);
+					max_min(a,mid+1,n,&rmin1,&rmin2,&rmax1,&rmax2);
+					if(lmin1<rmin1) then
+						if(lmin2<rmin1) then
+						{*min1=lmin1;*min2=lmin2;}
+						else then
+						{*min1=lmin1;*min2=rmin1;}
+					else then
+						if(rmin2<lmin1) then
+						{*min1=rmin1;*min2=rmin2;}
+						else then
+						{*min1=rmin1;*min2=lmin1;}
+					if(lmax1>rmax1) then
+						if(lmax2>rmax1) then
+						{*max1=lmax1;*max2=lmax2;}
+						else then
+						{*max1=lmax1;*max2=rmax1;}
+					else then
+						if(rmax2>lmax1) then
+						{*max1=rmax1;*max2=rmax2;}
+						else then
+						{*max1=rmax1;*max2=lmax1;}
+				}
+		}
+	4）源代码
+		#include<stdio.h>
+		void max_min(int a[],int m,int n,int *min1,int *min2,int *max1,int *max2);
+		/************begin************/
+
+		void max_min(int a[],int m,int n,int *min1,int *min2,int *max1,int *max2)
+		{
+			
+		int lmin1,lmin2,lmax1,lmax2;
+		int rmin1,rmin2,rmax1,rmax2;
+		int mid;
+		 
+		if(m==n)//分治子数组中只有一个数
+		{
+		*min1=*min2=*max1=*max2=a[m];
+		}
+		 
+		else//分治子数组中不止一个数
+			if(m==n-1)//分治子数组中仅有2个数
+			{
+				if(a[m]<a[n])
+				{
+					*min1=a[m];
+					*min2=a[n];
+					*max1=a[n];
+					*max2=a[m];
+				}
+				else
+				{
+					*min1=a[n];
+					*min2=a[m];
+					*max1=a[m];
+					*max2=a[n];
+				}
+			}
+		 
+			else//分治子数组中有超过2个数
+			{
+				mid=(m+n)/2;
+				max_min(a,m,mid,&lmin1,&lmin2,&lmax1,&lmax2);
+				max_min(a,mid+1,n,&rmin1,&rmin2,&rmax1,&rmax2);
+		 
+				//**************************************************
+				//确定出数组中最小的两个数
+				//**************************************************
+				if(lmin1<rmin1)//左子数组最小数<右子数组最小数
+				{
+					if(lmin2<rmin1)
+					{
+					*min1=lmin1;
+					*min2=lmin2;
+					}
+					else
+					{
+					*min1=lmin1;
+					*min2=rmin1;
+					}
+				}
+				else//右子数组最小数<左子数组最小数
+					if(rmin2<lmin1)
+					{
+					*min1=rmin1;
+					*min2=rmin2;
+					}
+					else
+					{
+					*min1=rmin1;
+					*min2=lmin1;
+					}
+		 
+				//**************************************************
+				//确定出数组中最大的两个数
+				//**************************************************
+				if(lmax1>rmax1)//左子数组最大数>右子数组最大数
+				{
+					if(lmax2>rmax1)
+					{
+					*max1=lmax1;
+					*max2=lmax2;
+					}
+					else
+					{
+					*max1=lmax1;
+					*max2=rmax1;
+					}
+				}
+				else//右子数组最大数>左子数组最大数
+					if(rmax2>lmax1)
+					{
+					*max1=rmax1;
+					*max2=rmax2;
+					}
+					else
+					{
+					*max1=rmax1;
+					*max2=lmax1;
+					}
+				}
+		}
+
+		int main()
+		{	
+			int* array;
+			int k,i;
+			int min1,min2,max1,max2;
+			printf("一共k个数！k=");
+			scanf("%d", &k);
+			array = (int*)calloc(k + 1, sizeof(int));
+			for (i = 0; i < k; i++)
+				scanf("%d", &array[i]);
+			max_min(array,0,k-1,&min1,&min2,&max1,&max2);
+			printf("min1=%d ", min1);
+			printf("min2=%d \n", min2);
+			printf("max1=%d ", max1);
+			printf("max2=%d \n", max2);	
+		}
+
+2
+	1）题目
+		题目：在一个nXm的方格中，m为奇数，放置有nX m个数，如图4-18所示，方格中间的下方有一人，此人可按照5个方向前进但不能越出方格，如图4- 19所示:
+		人每走一个方格必须取此方格中的数，要求找到一条从底到顶的路径，使其数相加之和最大，输出最大和的值。
+	2）思路
+		使用动态规划，dp[i][j]=max{dp[i-1][k]}(i-2<=k<=i+2&k>0&k>6)
+	3）伪代码
+		int main()
+		{
+			array1[6][7]={
+					{16,4,3,12,6,0,3},
+					{4,-5,6,7,0,0,2},
+					{6,0,-1,-2,3,6,8},
+					{5,3,4,0,0,-2,7},
+					{-1,7,4,0,7,-5,6},
+					{0,-1,3,4,12,4,2}
+				   };
+			for i=0 to 6 do
+				for j= to 7 do
+					dp[i][j]=array1[i][j];
+			for i=1 to 6 do
+			{
+				for j=0 to 7 do
+				{
+					if((j==0||j==6)&&i==5) then continue;//最后一行只有5个格子
+					max=0;
+					for k=j-2 to j+2 do
+					{
+						//5个格子挑之和最大的
+						if(k<0) then continue;
+						else if(k>6) then break;
+						else then
+							if(dp[i][j]+dp[i-1][k]>max) then
+								max=dp[i][j]+dp[i-1][k];
+					}
+					dp[i][j]=max;
+				}
+			}
+		 
+			max=0;
+			for j=1 to 5 do   //找出最大路线
+				if(dp[5][j]>max)  then   
+					max=dp[5][j];
+			print(max);
+		}
+	4）源代码
+		#include<stdio.h>
+		int main()
+		{
+			int array1[6][7]={
+					{16,4,3,12,6,0,3},
+					{4,-5,6,7,0,0,2},
+					{6,0,-1,-2,3,6,8},
+					{5,3,4,0,0,-2,7},
+					{-1,7,4,0,7,-5,6},
+					{0,-1,3,4,12,4,2}
+				   };
+			int dp[6][7];
+			int i,j,k;
+			int max;
+		 
+			for(i=0;i<6;i++)
+				for(j=0;j<7;j++)
+					dp[i][j]=array1[i][j];
+			for(i=1;i<6;i++)
+			{
+				for(j=0;j<7;j++)
+				{
+					if((j==0||j==6)&&i==5) continue;//最后一行只有5个格子
+					max=0;
+					for(k=j-2;k<=j+2;k++)
+					{
+						//5个格子挑之和最大的
+						if(k<0) continue;
+						else if(k>6) break;
+						else
+							if(dp[i][j]+dp[i-1][k]>max)
+								max=dp[i][j]+dp[i-1][k];
+					}
+					dp[i][j]=max;
+				}
+			}
+		 
+			max=0;
+			for(j=1;j<=5;j++)   //找出最大路线
+				if(dp[5][j]>max)    
+					max=dp[5][j];
+			printf("最大路径和是%d\n",max);
+		}
+3.
+	1）题目
+		编写用动态规划法求组合数()的算法。
+	2）思路
+		 C(n,k)=C(n-1,k)+C(n-1,k-1)
+	3）伪代吗
+		int cmn(n, m) {
+			dp[100][100];
+			for i = 1 to n do{
+				dp[i][0] = 1;
+				dp[i][1] = i;
+				dp[i][i] = 1;}
+			for i = 2 to n do
+				for j = 1 to m do
+					if (i > j)
+						dp[i][j] = dp[i - 1][j] + dp[i - 1][j - 1];
+			return dp[n][m];
+		}
+	4）源代码
+		int cmn(int n,int m)
+		{	
+			int dp[100][100];
+			int i ,j;
+			for (i = 1; i <= n; i++){
+				dp[i][0] = 1;
+				dp[i][1] = i;
+				dp[i][i] = 1;
+			}
+			for (i = 2; i <= n; i++)//n
+				for (j = 1; j <= m; j++)//k
+					if (i > j)
+						dp[i][j] = dp[i - 1][j] + dp[i - 1][j - 1];
+			return dp[n][m];
+		}
+		void main()
+		{
+			int n,m,result;   
+			printf("请输入n和m(n>m)：");
+			scanf("%d,%d",&n,&m); //接收键入的数值
+			result=cmn(n, m);
+			printf("%d",result);
+		}
+4.
+	1）题目
+		某一印刷厂有6项加工任务，对印刷车间和装订车间所需时间见表4-11.(时间单位:天)
+		任务     J1    J2    J3   J4    J5      J6
+		印刷车间 3     12    5    2     9       11
+		装订车间 8     10    9    6     3       1
+		完成每项任务都要先去印刷车间印刷，再到装订车间装订。问怎样安排这6项加工任
+		务的加工工序,使得加工总工时最少。
+	2）思路
+		流水调度Johnson算法：Johnson不等式：min{bi,aj}>=min{bj,ai};
+		如果作业i和j满足，则称作业i和j满足Johnson不等式。如果作业i和j不满足Johnson不等式，
+		则交换作业i和j的加工次序后，作业i和j满足Johnson不等式。
+	3）伪代吗
+		int FlowShop()
+		{
+			for i = 0 to 6 do
+			{
+				d[i].key = a[i] > b[i] ? b[i] : a[i];
+				d[i].job = a[i] <= b[i];
+				d[i].index = i;
+			}
+
+			BubbleSort(5);
+
+			j = 0, k = 6 - 1;
+
+			for i = 0 to 6 do
+				if (d[i].job) then
+					c[j++] = d[i].index;
+				else then
+					c[k--] = d[i].index;
+
+			j = a[c[0]];
+			k = j + b[c[0]];
+			for i = 1 to 6 do
+			{
+				j += a[c[i]];
+				k = j < k ? k + b[c[i]] : j + b[c[i]];
+			}
+			return k;
+		}
+	4）源代码
+		#include<stdio.h>
+		typedef struct js {
+			int key;
+			int index;
+			int job;
+		}js;
+		int a[6] = { 3,12,5,2,9,11 };
+		int b[6] = { 8,10,9,6,3,1 };
+		int c[6];
+		js d[6];
+
+		int FlowShop();
+		void BubbleSort(int n);
+
+		int FlowShop()
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				d[i].key = a[i] > b[i] ? b[i] : a[i];//按Johnson法则分别取对应的b[i]或a[i]值作为关键字
+				d[i].job = a[i] <= b[i];//给符合条件a[i]<b[i]的放入到N1子集标记为1
+				d[i].index = i;
+			}
+
+			BubbleSort(5);//对数组d按关键字升序进行排序
+
+			int j = 0, k = 6 - 1;
+
+			for (int i = 0; i < 6; i++)
+				if (d[i].job)
+					c[j++] = d[i].index;//将排过序的数组d，取其中作业序号属于N1的从前面进入
+				else
+					c[k--] = d[i].index;//属于N2的从后面进入，从而实现N1的非减序排序，N2的非增序排序
+
+			j = a[c[0]];
+			k = j + b[c[0]];
+			for (int i = 1; i < 6; i++)
+			{
+				j += a[c[i]];//M1在执行c[i]作业的同时，M2在执行c[i-1]号作业，最短执行时间取决于M1与M2谁后执行完
+				k = j < k ? k + b[c[i]] : j + b[c[i]];//计算最优加工时间
+			}
+			return k;
+		}
+
+		//冒泡排序
+		void BubbleSort(int n)
+		{
+			int i, j, flag;
+			js temp;
+
+			for (i = 0; i < n; i++) {
+				flag = 0;
+				for (j = n - 1; j > i; j--) {
+					//如果前一个数大于后一个数，则交换  
+					if (d[j].key <= d[j - 1].key) {
+						temp = d[j];
+						d[j] = d[j - 1];
+						d[j - 1] = temp;
+						flag = 1;
+					}
+				}
+				//如果本次排序没有进行一次交换，则break，减少了执行之间。  
+				if (flag == 0) {
+					break;
+				}
+			}
+		}
+		void main() {
+			int minTime = FlowShop();
+			printf("最少%d天\n",43);
+		}	
+		

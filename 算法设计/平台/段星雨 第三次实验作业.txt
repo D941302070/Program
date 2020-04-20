@@ -1,0 +1,361 @@
+1.	
+	1）试验题目
+		迷宫问题求解
+		迷富是许多小方格构成的短形，在每个小方格中有的是墙(图中的“1”)。
+		有的是路(图中的“0”) 走迷宫就是从一个小方格沿上、下、左、右四个方向到邻近的方格，当然不能穿墙。
+			1，1
+			0  0  0  1  0  0  0  0
+			0  1  1  1  1  1  1  1
+			0  0  0  1  0  0  0  1
+			0  1  0  1  0  1  0  1
+			0  1  0  0  0  1  0  1
+			0  1  1  1  1  1  0  1
+			0  1  0  0  0  1  0  0
+			0  1  0  0  0  0  1  0   8，8
+	2）试验要求
+		设迷宫的入口是在左上角(1,1)， 出口是右下角(8, 8)。
+		根据给定的迷宫，找出从入口到出口的所有路径。要求分别用递归和循环完成。
+	3）实验目的
+		找的所有的路
+	4）思路分析
+		均采用BFS和回溯算法，四个方向分别尝试，如果碰到墙或边界或者来的方向回溯
+	5）伪代码
+		1.循环
+			
+			direction[30];//方向栈，记录上个点进入该点的方向 1上，2右，3下，4左
+			position[30];//位置栈
+			top = -1;
+			step = 0;
+			count = 0;
+			void search() {
+				//将1，1压栈
+				for a = 0 to 30 do
+					position[a] = calloc(2,int);
+				top++;
+				position[top][0] = 1;
+				position[top][1] = 1;
+				direction[top] = 1;
+				map[1][1] = ++step;
+				while (direction[0] <= 4) do
+				{
+					if (top == -1) then
+					{top++;direction[0]++;}
+					//方向已经循环完
+					if (direction[top] >= 5) then
+					{map[position[top][0]][position[top][1]] = 0;step--;top--;direction[top]++;continue;}
+					if (position[top][0] == 8 && position[top][1] == 8) then
+					{//找到结果
+					count++;
+					for a = 1 to 8 do
+						for b = 1 to 8 do printf(map[a][b]);}
+					printf("\n");return;step--;top--;direction[top]++;map[8][8] = 0;}
+					top++;
+					//确定下个点
+					if (direction[top - 1] == 1) then //向上
+					{if (map[position[top - 1][0] - 1][position[top - 1][1]] == 0)then
+						{position[top][0] = position[top - 1][0] - 1;position[top][1] = position[top - 1][1];
+							direction[top] = 1;map[position[top - 1][0] - 1][position[top - 1][1]] = ++step;}
+						else then{direction[top - 1]++;top--;}}
+					else if (direction[top - 1] == 2) then//向右
+					{if (map[position[top - 1][0]][position[top - 1][1] + 1] == 0)then 
+						{position[top][0] = position[top - 1][0];position[top][1] = position[top - 1][1] + 1;
+							direction[top] = 1;map[position[top - 1][0]][position[top - 1][1] + 1] = ++step;}
+						else then
+						{direction[top - 1]++;top--;}}
+					else if (direction[top - 1] == 3) then//向下
+					{if (map[position[top - 1][0] + 1][position[top - 1][1]] == 0) then
+						{position[top][0] = position[top - 1][0] + 1;position[top][1] = position[top - 1][1];direction[top] = 1;
+							map[position[top - 1][0] + 1][position[top - 1][1]] = ++step;}
+						else then
+						{direction[top - 1]++;top--;}}
+					else if (direction[top - 1] == 4) then//向左
+					{if (map[position[top - 1][0]][position[top - 1][1] - 1] == 0) then
+						{position[top][0] = position[top - 1][0];position[top][1] = position[top - 1][1] - 1;direction[top] = 1;
+						map[position[top - 1][0]][position[top - 1][1] + 1] = ++step;}
+						else then
+						{direction[top - 1]++;top--;}}
+					else  then direction[top-1]++;
+				}
+			}
+
+		2.递归 
+			void search(int i, int j) {
+				//direction：上一层的进入当前的方向，1上，2右，3下，4左
+				if (map[i][j] != 0) then return;//当前节点有问题
+				if (i == 8 && j == 8) then//找到路径
+				{map[8][8] = step + 1;count++;
+					for a = 1 to 8 do
+						for b = 1 to 8 do printf(map[a][b]);}
+					printf("\n");return;
+				}
+				map[i][j] = ++step;//当前节点赋值
+				//向上
+				search(i - 1, j);
+				//向右
+				search(i, j + 1);
+				//向下
+				search(i + 1, j);
+				//向左
+				search(i, j - 1);
+				step--;
+				map[i][j] = 0;
+			}
+	6）源代码
+		1.循环
+			#include<stdio.h>
+			void search();
+			int map[10][10] = {
+				{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+				{-1, 0, 0, 0, 1, 0, 0, 0, 0,-1},
+				{-1, 0, 1, 1, 1, 1, 1, 1, 1,-1},
+				{-1, 0, 0, 0, 1, 0, 0, 0, 1,-1},
+				{-1, 0, 1, 0, 1, 0, 1, 0, 1,-1},
+				{-1, 0, 1, 0, 0, 0, 1, 0, 1,-1},
+				{-1, 0, 1, 1, 1, 1, 1, 0, 1,-1},
+				{-1, 0, 1, 0, 0, 0, 1, 0, 0,-1},
+				{-1, 0, 1, 0, 0, 0, 0, 1, 0,-1},
+				{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}
+			};
+			int direction[30];//方向栈，记录上个点进入该点的方向 1上，2右，3下，4左
+			int* position[30];//位置栈
+			int top = -1;//栈顶指针
+			int step = 0;
+			int count = 0;
+			void search() {
+				//将1，1压栈
+				int a, b;
+				for (a = 0; a < 30; a++)
+					position[a] = (int*)calloc(2, sizeof(int));
+				top++;
+				position[top][0] = 1;
+				position[top][1] = 1;
+				direction[top] = 1;
+				map[1][1] = ++step;
+				while (direction[0] <= 4)
+				{
+					if (top == -1)
+					{
+						top++;
+						direction[0]++;
+					}
+					//方向已经循环完
+					if (direction[top] >= 5)
+					{
+						map[position[top][0]][position[top][1]] = 0;
+						step--;
+						top--;
+						direction[top]++;
+						continue;
+					}
+					if (position[top][0] == 8 && position[top][1] == 8)
+					{
+						//找到结果
+						count++;
+						for (a = 1; a <= 8; a++) {
+							for (b = 1; b <= 8; b++)
+								printf("%3d", map[a][b]);
+							printf("\n");
+						}
+						step--;
+						top--;
+						direction[top]++;
+						map[8][8] = 0;
+					}
+					top++;
+					//确定下个点
+					if (direction[top - 1] == 1)//向上
+					{
+						if (map[position[top - 1][0] - 1][position[top - 1][1]] == 0)
+						{
+							position[top][0] = position[top - 1][0] - 1;
+							position[top][1] = position[top - 1][1];
+							direction[top] = 1;
+							map[position[top - 1][0] - 1][position[top - 1][1]] = ++step;
+						}
+						else
+						{
+							direction[top - 1]++;
+							top--;
+						}
+					}
+					else if (direction[top - 1] == 2)//向右
+					{
+						if (map[position[top - 1][0]][position[top - 1][1] + 1] == 0) 
+						{
+							position[top][0] = position[top - 1][0];
+							position[top][1] = position[top - 1][1] + 1;
+							direction[top] = 1;
+							map[position[top - 1][0]][position[top - 1][1] + 1] = ++step;
+						}
+						else
+						{
+							direction[top - 1]++;
+							top--;
+						}
+					}
+					else if (direction[top - 1] == 3)//向下
+					{
+						if (map[position[top - 1][0] + 1][position[top - 1][1]] == 0)
+						{
+							position[top][0] = position[top - 1][0] + 1;
+							position[top][1] = position[top - 1][1];
+							direction[top] = 1;
+							map[position[top - 1][0] + 1][position[top - 1][1]] = ++step;
+						}
+						else
+						{
+							direction[top - 1]++;
+							top--;
+						}
+					}
+					else if (direction[top - 1] == 4)//向左
+					{
+						if (map[position[top - 1][0]][position[top - 1][1] - 1] == 0)
+						{
+							position[top][0] = position[top - 1][0];
+							position[top][1] = position[top - 1][1] - 1;
+							direction[top] = 1;
+							map[position[top - 1][0]][position[top - 1][1] + 1] = ++step;
+						}
+						else
+						{
+							direction[top - 1]++;
+							top--;
+						}
+					}
+					else 
+					{
+						direction[top-1]++;
+					}
+				}
+			}
+			int main() 
+			{
+				search();
+				printf("共有%d条路径\n", count);
+			}
+		2.递归
+			#include<stdio.h>
+			void search(int i, int j);
+			int map[10][10] = {
+				{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+				{-1, 0, 0, 0, 1, 0, 0, 0, 0,-1},
+				{-1, 0, 1, 1, 1, 1, 1, 1, 1,-1},
+				{-1, 0, 0, 0, 1, 0, 0, 0, 1,-1},
+				{-1, 0, 1, 0, 1, 0, 1, 0, 1,-1},
+				{-1, 0, 1, 0, 0, 0, 1, 0, 1,-1},
+				{-1, 0, 1, 1, 1, 1, 1, 0, 1,-1},
+				{-1, 0, 1, 0, 0, 0, 1, 0, 0,-1},
+				{-1, 0, 1, 0, 0, 0, 0, 1, 0,-1},
+				{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}
+			}; 
+			int step = 0;
+			int count = 0;
+			int main() {
+
+				search(1, 1);
+				printf("共有%d种方案", count);
+			}
+			void search(int i, int j) {
+				//direction：上一层的进入当前的方向，1上，2右，3下，4左
+				int a, b;
+				if (map[i][j] != 0)//当前节点有问题
+					return;
+				if (i == 8 && j == 8)//找到路径
+				{
+					map[8][8] = step + 1;
+					count++;
+					for (a = 1; a <= 8; a++) {
+						for (b = 1; b <= 8; b++)
+							printf("%3d", map[a][b]);
+						printf("\n");
+					}
+					return;
+				}
+
+
+				map[i][j] = ++step;//当前节点赋值
+
+				//向上
+				search(i - 1, j);
+
+				//向右
+				search(i, j + 1);
+
+				//向下
+				search(i + 1, j);
+
+				//向左
+				search(i, j - 1);
+				step--;
+				map[i][j] = 0;
+			}
+	7）试验感想
+		通过本次实验让我对回溯和BFS有了跟深一步的了解，也让我跟好的掌握了该方法
+2.	
+	1）试验题目
+		某工业生产部门根据国家计划的安排，拟将某种高效率的5台机器，
+		分配给所属的3个工厂A,B,C,各工厂在获得这种机器后，
+		可以为国家盈利的情况如表1所示。
+			S  A   B   C
+			0  0   0   0
+			1  3   5   4
+			2  8   10  6
+			3  9   11  11
+			4  12  11  12
+			5  13  11  12
+		第一列s为机器数，A、 B、C三列表示3个工厂在拥有不同台数的机器时的盈利值。
+	2）试验要求
+		这5台机器如何分配给客工厂，才能使国家盈利最大。
+	3）实验目的
+		找到盈利最大情况
+	4）思路分析
+		采用回溯算法，分别对A,B,C却对应的数量，不满足的跳过，分别计算结果，求出最大值
+	5）伪代码
+		int main()
+		{
+			//A、B、C拥有的机器数和盈利情况的对应关系
+			A[6] = { 0,3,8,9,12,13 };
+			B[6] = { 0,5,10,11,11,11 };
+			C[6] = { 0,4,6,11,12,12 };
+			for i = 0 to 5 do
+			{for j = 0 to 5 - i do
+				{for k = 0 to 
+					{if (max < A[i] + B[j] + C[k]) then{
+							a = i;b = j;c = k;max = A[i] + B[j] + C[k];}}}}
+			print("A B C最优分配机器数依次为"+a+b+c);
+			printf("最大盈利值为"+max);
+		}
+	6）源代码
+		#include<stdio.h>
+		int main()
+		{
+			//A、B、C拥有的机器数和盈利情况的对应关系
+			int A[6] = { 0,3,8,9,12,13 };
+			int B[6] = { 0,5,10,11,11,11 };
+			int C[6] = { 0,4,6,11,12,12 };
+			int i, j, k, a, b, c;
+			int max = 0;
+			for (i = 0; i <= 5; i++)
+			{
+				for (j = 0; j <= 5 - i; j++)
+				{
+					for (k = 0; k <= 5 - j - i; k++)
+					{
+						if (max < A[i] + B[j] + C[k]){
+							a = i;
+							b = j;
+							c = k;
+							max = A[i] + B[j] + C[k];
+						}
+					}
+				}
+			}
+
+			printf("A B C最优分配机器数依次为 %d %d %d\n",a,b,c);
+			printf("最大盈利值为%d",max);
+		}
+	7）试验感想
+		通过这个实验，让我跟好的掌握了这些算法，也让我从简单到难慢慢理解
+
+
