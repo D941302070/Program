@@ -1,0 +1,452 @@
+1.
+	1）实验题目：
+		象椹中马遍历棋盘的问题：在5*5的棋盘中，马只能走日字。马从位置(0,0) 处出发，把棋盘的每一点都走一次，且只走一次，找出所有路径，并输出路径总数。
+	2）实验要求：
+		使用递归和非递归求解问题
+	3）实验目的：
+		利用题目理解图的搜索算法
+	4）思路分析：
+		递归和非递归相同，都是使用dfs+回溯来寻找
+		不同点：非递归要存储之前的结果，方便回溯时使用
+		回溯条件：
+			1.当前点已经被覆盖
+			2.坐标越界
+			3.情况遍历完
+			4.找到一种解
+	5）伪代码：
+		1.递归
+			chess[7][7];//棋盘
+			count = 0;//情况计数
+			step = 1;//步数计数
+			void search(x,y)  //路径寻找，要求使用递归的函数
+			{
+				//x:行号，y：列号
+
+				//越界
+				if (x < 1 || x > 5 || y < 1 || y > 5) then return;
+				if (chess[x][y] == 0) then
+					chess[x][y] = step++;
+				else then return;
+				//结束
+				if (step == 26) then
+				{ print(); chess[x][y] = 0; step--;return; }
+				search(x - 1, y - 2);//左上
+				search(x - 2, y - 1);
+
+				search(x - 1, y + 2);//右上
+				search(x - 2, y + 1);
+
+				search(x + 1, y - 2);//左下
+				search(x + 2, y - 1);
+
+				search(x + 1, y + 2);//右下
+				search(x + 2, y + 1);
+
+				step--;
+				chess[x][y] = 0;//清空本次
+			}
+		2.非递归
+		#include<stdio.h>
+			chess[6][6];//棋盘
+			count = 0;//情况计数
+			//栈，储存dfs结果，储存一个长度为三的数组
+			//0：行，1：列，2：下一个点的走法
+			stack[26][3];
+			top = 0;//栈顶指针，栈从1号开始储存，0号储存跳出循环条件
+			//action共n = 8种走法，[2n]和[2n-1]为变化位置
+			action[17];
+
+
+			void search()  //路径寻找，要求使用递归的函数
+			{
+				//压入第一个元素（1,1）
+				top++;chess[1][1] = 1;stack[top][0] = 1;stack[top][1] = 1;stack[top][2] = 1;
+				//开始查找
+				while (top > 0) do
+				{
+					if (坐标越界) then {top--;stack[top][2]++;}
+					if (点已经被填充) then {top--;stack[top][2]++;}			
+					if (情况遍历完) then
+					{chess[stack[top][0]][stack[top][1]] = 0;top--;stack[top][2]++;}
+					//写入点
+					chess[stack[top][0]][stack[top][1]] = top;
+					if (找到结果)
+					{print();chess[stack[top][0]][stack[top][1]] = 0;
+						top--;stack[top][2]++;continue;}
+					//进入下一个点
+					top++;
+					stack[top][0] = stack[top - 1][0] + action[stack[top - 1][2] * 2];
+					stack[top][1] = stack[top - 1][1] + action[stack[top - 1][2] * 2 - 1];;
+					stack[top][2] = 1;}
+
+	6）源代码：
+		1.递归
+			#include<stdio.h>
+			int chess[7][7] = {
+				{-1,-1,-1,-1,-1,-1,-1},
+				{-1,0,0,0,0,0,-1},
+				{-1,0,0,0,0,0,-1},
+				{-1,0,0,0,0,0,-1},
+				{-1,0,0,0,0,0,-1},
+				{-1,0,0,0,0,0,-1},
+				{ -1,-1,-1,-1,-1,-1,-1 }
+			};
+			int count = 0;//情况计数
+			int step = 1;//步数计数
+
+			void print();
+			void search(int x, int y);
+
+			int main()
+			{
+				search(1, 1);
+				printf("路径总数%d", count);
+			}
+
+			void search(int x, int y)  //路径寻找，要求使用递归的函数
+			{
+				//x:行号，y：列号
+
+				//越界
+				if (x < 1 || x > 5 || y < 1 || y > 5) return;
+				if (chess[x][y] == 0)
+					chess[x][y] = step++;
+				else return;
+				//结束
+				if (step == 26) 
+				{ 
+					print(); 
+					chess[x][y] = 0; 
+					step--;
+					return; 
+				}
+				search(x - 1, y - 2);//左上
+				search(x - 2, y - 1);
+
+				search(x - 1, y + 2);//右上
+				search(x - 2, y + 1);
+
+				search(x + 1, y - 2);//左下
+				search(x + 2, y - 1);
+
+				search(x + 1, y + 2);//右下
+				search(x + 2, y + 1);
+
+				step--;
+				chess[x][y] = 0;//清空本次
+			}
+
+			void print()
+			{
+				int i, j;
+				count++;
+				for (i = 1; i <= 5; i++)
+				{
+					for (j = 1; j <= 5; j++)
+						printf("%3d", chess[i][j]);
+					printf("\n");
+				}
+				printf("\n");
+			}
+
+		2.非递归
+			#include<stdio.h>
+			int chess[6][6] = {
+				{-1,-1,-1,-1,-1,-1},
+				{-1,0,0,0,0,0},
+				{-1,0,0,0,0,0},
+				{-1,0,0,0,0,0},
+				{-1,0,0,0,0,0},
+				{-1,0,0,0,0,0}
+			};
+			int count = 0;//情况计数
+			//栈，储存dfs结果，储存一个长度为三的数组
+			//0：行，1：列，2：下一个点的走法
+			int stack[26][3];
+			int top = 0;//栈顶指针，栈从1号开始储存，0号储存跳出循环条件
+			//action共n = 8种走法，[2n]和[2n-1]为变化位置
+			int action[17] = {0,-1,-2,-2,-1,-1,2,-2,1,1,-2,2,-1,1,2,2,1};
+
+			void print();
+			void search();
+
+			int main()
+			{
+				search();
+				printf("\n路径总数count=%d\n", count);
+			}
+
+			void search()  //路径寻找，要求使用递归的函数
+			{
+				//压入第一个元素（1,1）
+				top++;
+				chess[1][1] = 1;
+				stack[top][0] = 1;
+				stack[top][1] = 1;
+				stack[top][2] = 1;
+				//开始查找
+				while (top > 0)
+				{
+					//回溯
+					
+					//1.坐标越界
+					if (stack[top][0] < 1 || stack[top][0] > 5 || stack[top][1] < 1 || stack[top][1] >5 )
+					{
+						top--;
+						stack[top][2]++;
+					}
+					//2.点已经被填充
+					if (chess[stack[top][0]][stack[top][1]] != top && chess[stack[top][0]][stack[top][1]] != 0)
+					{
+						top--;
+						stack[top][2]++; 
+					}
+					//3.情况遍历完			
+					if (stack[top][2] > 8)
+					{
+						chess[stack[top][0]][stack[top][1]] = 0;
+						top--;
+						stack[top][2]++;
+					}
+
+					//写入点
+					chess[stack[top][0]][stack[top][1]] = top;
+
+					//4.找到结果,打印，回溯
+					if (top == 25)
+					{
+						print();
+						chess[stack[top][0]][stack[top][1]] = 0;
+						top--;
+						stack[top][2]++;
+						continue;
+					}
+					//进入下一个点
+					top++;
+					stack[top][0] = stack[top - 1][0] + action[stack[top - 1][2] * 2];
+					stack[top][1] = stack[top - 1][1] + action[stack[top - 1][2] * 2 - 1];;
+					stack[top][2] = 1;
+				}
+			}
+
+			void print()
+			{
+				int i, j;
+				count++;
+				printf("output count=%d\n\n", count);
+				for (i = 1; i <= 5; i++)
+				{
+					for (j = 1; j <= 5; j++)
+						printf("%5d", chess[i][j]);
+					printf("\n");
+				}
+			}
+
+
+2.
+	1）实验题目：
+		要在n*n的国际象棋棋盘中放n个皇后，使任意两个皇后都不能互相吃掉。规则:皇后能吃掉同一行、同一列、同一对角线的任意棋子。
+	2）实验要求：
+		使用递归和非递归求解问题
+	3）实验目的：
+		利用题目理解图的搜索算法
+	4）思路分析：
+		递归和非递归相同，都是使用dfs+回溯来寻找
+		不同点：非递归要存储之前的结果，方便回溯时使用
+		回溯条件：
+			1.皇后位置冲突
+			2.找到一种解
+	5）伪代码：
+		1.递归
+			
+			int a[100];   //皇后位置
+			int n;       //棋盘n*n，n个皇后
+			int total=0;   //方案总数
+			void backdate(int n);  //寻找皇后位置
+
+
+			int Cheak(int k) {
+				int i;
+				for (i = 1; i < k; i++)
+					if (k - i == abs(a[k] - a[i]) || a[i] == a[k])
+						return 0;
+				return 1;
+			}
+
+			void backdate(int n)   //寻找皇后位置，要求回溯
+			{  
+				int k;
+				int i;
+				k=1;
+				a[1] = 1;
+				while (a[1] <= n)
+				{
+					if (a[k] >= n + 1) {
+						a[--k]++;
+						continue;
+					}
+
+					if (Cheak(k))
+					{
+						if (k == n)
+						{
+							total++;
+							printf("huanghou\n");
+							for (i = 1; i <= n; i++)
+								printf("第%d皇后在%d列\n", i, a[i]);
+							printf("huanghou\n");
+							a[k]++;
+						}
+						else a[++k] = 1;
+					}
+					else
+						a[k]++;
+				}
+
+
+			}
+			void main(){
+
+					printf("请输入n：");
+					scanf("%d",&n);
+					backdate(n);
+					printf("一共有%d种方案",total);
+			}
+
+		2.递归
+			#include <stdio.h>
+			#include <stdlib.h>
+
+			int n;//皇后个数
+			int count = 0;
+			int chess[100];
+
+			void backtrack(int k); //位置尝试，要求使用递归
+			int Cheak(int n);
+			void backtrack(int n)   //位置尝试，要求使用递归
+			{
+				int i;
+				if (k == n + 1) {
+					printf("huanghou\n");
+					count++;
+					for (i = 1; i <= n; i++)
+						printf("第%d皇后在%d列\n", i, chess[i]);
+					printf("huanghou\n");
+					return;
+				}
+				for (chess[k] = 1; chess[k] <= n; chess[k]++)
+					if (Cheak(k))
+						backtrack(k + 1);
+			}
+			int Cheak(int n) {
+				int i;
+				for (i = 1; i < n; i++)
+					if (n - i == abs(chess[n] - chess[i]) || chess[i] == chess[n])
+						return 0;
+				return 1;
+			}
+
+			int main()
+			{
+				printf("请输入n：");
+				scanf("%d", &n);
+				backtrack(1);
+				printf("一共有%d种方案\n", count);
+			}
+	6）源代码：
+		1.非递归
+			#include "stdio.h"
+			#include "math.h"
+			int a[100];   //皇后位置
+			int n;       //棋盘n*n，n个皇后
+			int total=0;   //方案总数
+			void backdate(int n);  //寻找皇后位置
+
+
+			int Cheak(int k) {
+				int i;
+				for (i = 1; i < k; i++)
+					if (k - i == abs(a[k] - a[i]) || a[i] == a[k])
+						return 0;
+				return 1;
+			}
+
+			void backdate(int n)   //寻找皇后位置，要求回溯
+			{  
+				int k;
+				int i;
+				k=1;
+				a[1] = 1;
+				while (a[1] <= n)
+				{
+					if (a[k] >= n + 1) {
+						a[--k]++;
+						continue;
+					}
+
+					if (Cheak(k))
+					{
+						if (k == n)
+						{
+							total++;
+							printf("huanghou\n");
+							for (i = 1; i <= n; i++)
+								printf("第%d皇后在%d列\n", i, a[i]);
+							printf("huanghou\n");
+							a[k]++;
+						}
+						else a[++k] = 1;
+					}
+					else
+						a[k]++;
+				}
+
+
+			}
+			void main(){
+
+					printf("请输入n：");
+					scanf("%d",&n);
+					backdate(n);
+					printf("一共有%d种方案",total);
+			}
+		2.递归
+			#include <stdio.h>
+			#include <stdlib.h>
+
+			int n;//皇后个数
+			int count = 0;
+			int chess[100];
+
+			void backtrack(int k); //位置尝试，要求使用递归
+			int Cheak(int n);
+			void backtrack(int n)   //位置尝试，要求使用递归
+			{
+				int i;
+				if (k == n + 1) {
+					printf("huanghou\n");
+					count++;
+					for (i = 1; i <= n; i++)
+						printf("第%d皇后在%d列\n", i, chess[i]);
+					printf("huanghou\n");
+					return;
+				}
+				for (chess[k] = 1; chess[k] <= n; chess[k]++)
+					if (Cheak(k))
+						backtrack(k + 1);
+			}
+			int Cheak(int n) {
+				int i;
+				for (i = 1; i < n; i++)
+					if (n - i == abs(chess[n] - chess[i]) || chess[i] == chess[n])
+						return 0;
+				return 1;
+			}
+
+			int main()
+			{
+				printf("请输入n：");
+				scanf("%d", &n);
+				backtrack(1);
+				printf("一共有%d种方案\n", count);
+			}
