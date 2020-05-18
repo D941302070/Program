@@ -1,0 +1,340 @@
+1.	
+	1）题目
+		有一个由数字1,2.3,..,.9组成的数字串(长度不超过200),问如何将M(M<20)
+		个加号(“+”)插人到这个数字串中,使所形成的算术表达式的值最小。请编写算法解
+		个问题。
+		注意:加号不能加在数字串的最前面或最末尾，也不应有两个或两个以上的加号相邻
+		M保证小于数字串的长度。
+		例如:数字串79846 ,若需要加入两个加号,则最佳方案为79+8+46,算术表达式的值
+		为133。
+	2）思路
+		dp(p,x) = min { dp(k,x-1) + num(k,p) } (x<=k<=p-1)
+		其中：
+		dp(p,0)= num(0,p)
+		dp(p,x)表示前p个数字中添上x个加号后得到的最小值 。
+		num(x,y)表示数字串索引[x.y)的数 
+	3）伪代吗
+		int connectNum(x,y)
+		{if (num[x][y] != -1) then return num[x][y];
+		num[x][y] = 0;
+		for i = x to y do
+			num[x][y] = num[x][y] * 10 + numStr[i] - '0';
+		return num[x][y];}
+		
+		int computeDP(p,x)
+		{if (dp[p][x] != -1) then
+			return dp[p][x];
+		if (x == 0) then
+		{dp[p][0] = connectNum(0, p);
+		return dp[p][0];}
+		dp[p][x] = 0x3f3f3f3f;
+		for i = p - 1 to x do
+			dp[p][x] = min(dp[p][x], computeDP(i, x - 1) + connectNum(i, p));
+		return dp[p][x];}
+	4）源代码
+		#define min(a, b) (((a) > (b)) ? (b) : (a))
+		#include <stdio.h>
+		#include <string.h>
+		char c[100];  //存放键入的数字串
+		int m; //加号数量
+		int len;
+		int dp[200][200];
+		int num[200][200];
+
+		int connectNum(int x, int y);//计算num(x,y)
+		int computeDP(int p, int x);//计算dp(p,x)
+
+		int main() 
+		{     
+			//数组初始化
+			memset(dp, -1, sizeof(dp));
+			memset(num, -1, sizeof(num));
+			scanf("%s %d",c,&m); //键入数字串和加号数量
+			len = strlen(c);
+			printf("%d", computeDP(len, m));
+			return 0;
+		}
+		int connectNum(int x, int y)
+		{
+			int i;
+			//如果已计算则直接返回数值
+			if (num[x][y] != -1)
+				return num[x][y];
+			num[x][y] = 0;
+			for (i = x; i < y; i++)
+				num[x][y] = num[x][y] * 10 + c[i] - '0';
+			return num[x][y];
+		}
+		int computeDP(int p, int x)
+		{
+			int i;
+			//如果已计算则直接返回数值
+			if (dp[p][x] != -1)
+				return dp[p][x];
+			//dp(p,0)= NUM(0,p)
+			if (x == 0)
+			{
+				dp[p][0] = connectNum(0, p);
+				return dp[p][0];
+			}
+			//dp[p, x] = min{ dp(k,x - 1) + num(k,p) } (x <= k <= p - 1)
+			dp[p][x] = 0x3f3f3f3f;
+			for (i = p - 1; i >= x; i--)
+				dp[p][x] = min(dp[p][x], computeDP(i, x - 1) + connectNum(i, p));
+			return dp[p][x];
+		}
+
+2.	
+	1）题目
+		有分数1/2,1/3,1/4,1/5,1/6,1/8,1/10,1/12,1/15,求将其中若干个分数相加和
+		恰好为1的组成方案,并打印成等式。	
+	2）思路
+		通过递归回溯，将每次的结果储存在数组中，回溯条件是：当前选择的数相加结果已大于1
+	3）伪代吗
+		int* plus(endIndex);//计算结果，endIndex：结束数组索引，返回一个二维数组储存分子和分母
+		void compute(start,floor)
+		{
+			for i = start to 9 do 
+			{result[floor] = i;
+			tem = plus(floor);
+			if ((float)tem[0] / tem[1] < 1.0) then compute(i + 1, floor + 1);
+			else if ((float)tem[0] / tem[1] == 1.0) then print(floor);}}
+	4）源代码
+		#include<stdio.h>
+		int num[9] = { 2,3,4,5,6,8,10,12,15 };
+		int result[9];//储存结果索引
+
+		void compute(int start, int floor);//start：开始索引，floor：当前加数的个数
+		int* plus(int endIndex);//计算结果，endIndex：结束数组索引，返回一个二维数组储存分子和分母
+		void print(int floor);//打印result前floor索引的结果,
+
+		void main()
+		{
+			//初始化数组
+			memset(result, -1, sizeof(result));
+			compute(0, 0);
+		}
+		void compute(int start, int floor)
+		{
+			int i, *tem;
+			for (i = start; i < 9;i++)
+			{
+				result[floor] = i;
+				tem = plus(floor);
+				if ((float)tem[0] / tem[1] < 1.0)
+					compute(i + 1, floor + 1);
+				else if ((float)tem[0] / tem[1] == 1.0)
+					print(floor);
+			}
+		}
+		int* plus(int endIndex) 
+		{
+			int reNum[2] = { 1,num[result[0]] }, i;
+			for (i = 1; i <= endIndex; i++)
+			{
+				reNum[0] = reNum[0] * num[result[i]] + reNum[1]; //分子
+				reNum[1] *= num[result[i]];//分母
+			}
+			return reNum;
+		}
+		void print(int floor) 
+		{
+			int i;
+			for (i = 0; i <= floor; i++)
+				printf("1/%d ", num[result[i]]);
+			printf("\n");
+		}
+		
+3.	
+	1）题目
+		是否存在一个由1~9组成的9位数,每个数字只能出现-一次，且这个9位数由高
+		位到低位前i位能被i整除。
+	2）思路
+		9层for循环，组合出每种情况，再在每次选择下一位时回溯判断，回溯条件：
+		不满足整除或有存在数字相同
+	3）伪代吗
+		void findNum()
+		{
+			for result[1] = 1 to 9 do
+			 for result[2] = 1 to 9 do
+			  if (cheak(2)) then
+			   for result[3] = 1 to 9 do
+			    if (cheak(3)) then
+			     for result[4] = 1 to 9 do
+			      if (cheak(4)) then
+			       for result[5] = 1 to 9 do
+			         if (cheak(5)) then
+			          for result[6] = 1 to 9 do
+			           if (cheak(6)) then
+			            for result[7] = 1 to 9 do
+			             if (cheak(7)) then
+			              for result[8] = 1 to 9 do
+			               if (cheak(8)) then
+			                for result[9] = 1 to 9 do
+			                 if (cheak(9)) then
+			                  print();}
+	4）源代码
+		#include<stdio.h>
+		int result[10];
+		int count = 0;
+
+		void findNum();//找结果
+		int cheak(int n);//检查回溯
+		void print();//打印结果
+
+		void main()
+		{
+			findNum();
+			printf("一共有%d种",count);
+		}
+		void findNum()
+		{
+			for (result[1] = 1; result[1] <= 9; result[1]++)
+				for (result[2] = 1; result[2] <= 9; result[2]++)
+					if (cheak(2))
+						for (result[3] = 1; result[3] <= 9; result[3]++)
+							if (cheak(3))
+								for (result[4] = 1; result[4] <= 9; result[4]++)
+									if (cheak(4))
+										for (result[5] = 1; result[5] <= 9; result[5]++)
+											if (cheak(5))
+												for (result[6] = 1; result[6] <= 9; result[6]++)
+													if (cheak(6))
+														for (result[7] = 1; result[7] <= 9; result[7]++)
+															if (cheak(7))
+																for (result[8] = 1; result[8] <= 9; result[8]++)
+																	if (cheak(8))
+																		for (result[9] = 1; result[9] <= 9; result[9]++)
+																			if (cheak(9))
+																				print();
+		}
+		int cheak(int n)
+		{
+			int num = 0, i;
+			for (i = 1; i < n; i++)
+			{
+				if (result[n] == result[i])
+					return 0;
+				num = num * 10 + result[i];
+			}
+			num = num * 10 + result[n];
+			return num % n == 0;
+		}
+		void print()
+		{
+			int i;
+			count++;
+			for (i = 1; i <= 9; i++)
+				printf("%d",result[i]);
+			printf("\n");
+		}
+	
+4.	
+	1）题目
+		一个整数n(n≤100)可以有多种分划,分划整数之和为n。
+		输人: n=6
+		6
+		5 1
+		4 2
+		4 1 1
+		3 3
+		3 2 1
+		3 1 1 1
+		2 2 2
+		2 2 1 1
+		2 1 1 1 1
+		1 1 1 1 1 1
+		total=11 {表示分划数有11种}
+		求n的分划数。
+	2）思路
+		回溯：依次判断下次划分的最大值，DFS划分
+	3）伪代吗
+		void sum(int i) {
+			if (m - n[i] < n[i]) then {
+				//下次划分的最大值小于n[i]
+				m = m - n[i];n[i + 1] = m;i++;n[i + 1] = 0;}
+			else {
+				//下次划分的最大值大于n[i]，则n[i + 1]最大值只能为n[i]
+				n[i + 1] = n[i];m -= n[i];i++;}
+			//下次划分不可以直接结束
+			if (m != n[i]) then sum(i);
+			//下次划分可以直接结束
+			else then output_sum();
+
+			//下次划分的最大值大于1时，则依次减一进行下下次划分
+			if (n[i] > 1)  then{n[i]--;sum(i);}
+			else  then{
+				//不满足划分条件，回溯，指针倒退回上一层，划分结果重新并入m
+				while ((n[i] == 1) && (i > 0)) do {i--;m += n[i];}
+				if (i != 0) then {n[i]--;sum(i);}}}
+	4）源代码
+		#include<stdio.h>
+		int num[1000];
+		int m, k, total = 1;
+		void output_sum() {
+			int i;
+			total++;
+			for (i = 0; num[i] != 0; i++)
+				printf("%3d", num[i]);
+			printf("\n");
+		}
+		void sum(int i) {
+			if (m - num[i] < num[i]) {
+				//下次划分的最大值小于n[i]
+				m = m - num[i];
+				num[i + 1] = m;
+				i++;
+				num[i + 1] = 0;
+			}
+			else {
+				//下次划分的最大值大于n[i]，则n[i + 1]最大值只能为n[i]
+				num[i + 1] = num[i];
+				m -= num[i];
+				i++;
+			}
+
+			//下次划分不可以直接结束
+			if (m != num[i])
+				sum(i);
+			//下次划分可以直接结束
+			else
+				output_sum();
+
+			//下次划分的最大值大于1时，则依次减一进行下下次划分
+			if (num[i] > 1) {
+				num[i]--;
+				sum(i);
+			}
+			else {
+				//不满足划分条件，回溯，指针倒退回上一层，划分结果重新并入m
+				while ((num[i] == 1) && (i > 0)) {
+					i--;
+					m += num[i];
+				}
+				if (i != 0) {
+					num[i]--;
+					sum(i);
+				}
+			}
+		}
+
+
+		void main()
+		{
+			int n,i;
+			printf("n=");
+			scanf("%d",&n);  //获取键入的n的数值
+			//k为要划分的数，m为每次进入sum函数是要划分的数
+			m = k = num[0] = n;
+			printf("%3d\n",n);//输出自身划分
+			for (i = 1; i <= k; i++)
+				num[i] = 0;
+			//n[0]为第一个数，每次由大到小递减，确定每次划分的最大数
+			while (num[0] != 1) {
+				num[0]--;
+				sum(0);
+				m = k;
+			}
+			printf("total = %d\n", total);
+
+		}
