@@ -37,7 +37,8 @@ package LeetcodePrimaryAlgorithm.arr;
 public class Demo02 {
     public int maxProfit(int[] prices) {
         for (int i = 0; i < prices.length; i++) {
-            
+
         }
+        return 0;
     }
 }
