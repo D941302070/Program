@@ -17,72 +17,35 @@ import java.util.List;
  * [-1, 0, 1],
  * [-1, -1, 2]
  * ]
- * <p>
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/3sum
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
 public class Demo15 {
-    /*
-    外层for用来控制左边元素，
-    while最右边元素，
-    再找到中间的一个数，然后二分查找到结果
-     */
-    public static List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> list = new ArrayList<>();
-        if (nums == null || nums.length < 3) return list;
-        if (nums.length == 3)
-            if (nums[0] + nums[1] + nums[2] == 0) {
-                List<Integer> tmp = new ArrayList<>();
-                tmp.add(nums[0]);
-                tmp.add(nums[1]);
-                tmp.add(nums[2]);
-                list.add(tmp);
-                return list;
-            }
-        Arrays.sort(nums);//数组排序
-        if (nums[0] >= 0 || nums[nums.length - 1] <= 0)
-            if (nums[0] + nums[1] + nums[2] == 0 || nums[nums.length - 1] + nums[nums.length - 2] + nums[nums.length - 3] == 0) {
-                List<Integer> tmp = new ArrayList<>();
-                tmp.add(0);
-                tmp.add(0);
-                tmp.add(0);
-                list.add(tmp);
-                return list;
-            } else return list;
-        for (int i = 0; i < nums.length - 3; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) continue;
-            if (nums[i] >= 0) break;
-            int left = i;
-            int right = nums.length - 1;
-            int l = left + 1, r = right - 1;
-            while (right - left > 1) {
-                while (l <= r) {
-                    int mid = l + (r - l) / 2;
-                    if (mid==left||mid==right) break;
-                    int temp = nums[mid] + nums[left] + nums[right];
-                    if (temp == 0) {
-                        List<Integer> tmp = new ArrayList<>();
-                        tmp.add(nums[left]);
-                        tmp.add(nums[mid]);
-                        tmp.add(nums[right]);
-                        list.add(tmp);
-                        break;
-                    }
-                    if (temp < 0) l = mid + 1;
-                    if (temp > 0) r = mid - 1;
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList<>();
+        int n = nums.length;
+
+        for (int first = 0; first < n; first++) {
+            if (first > 0 && nums[first] == nums[first - 1]) continue;
+            int third = n - 1;
+            for (int second = first + 1; second < n; second++) {
+                if (second > first + 1 && nums[second] == nums[second - 1]) continue;
+                while (second < third && nums[second] + nums[third] + nums[first] > 0)
+                    --third;
+                // 如果指针重合，随着 b 后续的增加
+                // 就不会有满足 a+b+c=0 并且 b<c 的 c 了，可以退出循环
+                if (third == second) break;
+                if (nums[third] + nums[second] + nums[first] == 0) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(nums[first]);
+                    list.add(nums[second]);
+                    list.add(nums[third]);
+                    res.add(list);
                 }
-                right--;
-                l = left;
-                r = right;
             }
         }
-        return list;
+        return res;
     }
 
-    public static void main(String[] args) {
-        int[] a = {1,2,-2,-1};
-        threeSum(a);
-    }
 }
