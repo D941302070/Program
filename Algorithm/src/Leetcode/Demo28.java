@@ -21,29 +21,11 @@ package Leetcode;
  */
 public class Demo28 {
     public int strStr(String haystack, String needle) {
-        /*
-        KMP算法，先找出next数组，然后再比较。
-         */
-        int[] next = new int[needle.length()];
-        next[0] = 0;
-        for (int i = 1; i < needle.length(); i++) {
-            int f = 0;
-            while (f == i)
-                if (needle.charAt(f) == needle.charAt(i - f))
-                    f++;
-                else break;
-            next[i] = f;
-        }
-        int i = 0, j = 0;
-        while (i < haystack.length() && j < needle.length()) {
-            if (haystack.charAt(i) == needle.charAt(i)) {
-                i++;
-                j++;
-            } else j = next[j];
-        }
-        if (j == needle.length())
-            return i - j;
-        else
-            return -1;
+        int len1 = haystack.length(), len2 = needle.length();
+        if (len2 <= 0) return -1;
+        for (int i = 0; i < len1 - len2 + 1; i++)
+            if (haystack.charAt(i) == needle.charAt(0) && haystack.substring(i, i + len2).equals(needle))
+                return i;
+        return -1;
     }
 }
