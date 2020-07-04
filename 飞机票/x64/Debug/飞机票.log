@@ -1,0 +1,8 @@
+﻿  airplane.c
+  global.c
+  list.c
+  main.c
+C:\Users\ASUS\Desktop\programs\飞机票\main.c(9,30): warning C4013: “malloc”未定义；假设外部返回 int
+  正在生成代码...
+C:\Users\ASUS\Desktop\programs\飞机票\main.c(9,50): warning C4312: “类型强制转换”: 从“int”转换到更大的“all_data_t *”
+  飞机票.vcxproj -> C:\Users\ASUS\Desktop\programs\飞机票\x64\Debug\飞机票.exe
