@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+    <!--
+    android:layout_margin:外边距
+
+    android:padding：内边距
+
+    android:orientation:方向
+        vertical :垂直的
+        horizontal：水平的
+
+    android:layout_weight:权重
+        1.先分配没有该属性的元素，然后在分配该属性
+        2.水平状态下，将宽度设为0dp后，按比例划分，宽度不随内容而改变
+
+    android:layout_gravity:相关与父容器的重力
+    -->
+
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="#ff0000"
+            android:text="lalalalalalalalalalalala"
+            android:textSize="28sp" />
+
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:background="#00ff00"
+            android:text="lala"
+            android:textSize="28sp" />
+
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="#0000ff"
+            android:text="lala"
+            android:textSize="28sp" />
+
+
+</LinearLayout>

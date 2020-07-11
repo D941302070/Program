@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="start_select_food">开始选餐</string>
+    <string name="name">姓名</string>
+    <string name="input_name_hint">请输入姓名</string>
+    <string name="gender">性别</string>
+    <string name="man">男</string>
+    <string name="woman">女</string>
+    <string name="hot">辣</string>
+    <string name="sour">酸</string>
+    <string name="seafood">海鲜</string>
+    <string name="budget">预算</string>
+    <string name="yuan">元</string>
+    <string name="_100yuan">100元</string>
+    <string name="_0yuan">0元</string>
+    <string name="searchFood">寻找菜品</string>
+    <string name="next">下一个</string>
+    <string name="displayInformation">显示信息</string>
+</resources>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+    <!--
+    EditText
+        android:inputType:输入类型
+            textPassword:密码
+            number ：只能有整数
+            numberSigned：整数
+            numberDecimal：小数
+
+        android:maxLength:最大长度
+
+        android:hint：提示文字
+
+    -->
+
+    <!--
+    ImageView
+        android：src 指定前景图片资源  保证自身比例不变
+        android:background 设置背景，自身随标签大小变化
+    -->
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="Sign Up!" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="LALALALALAL\nLALALALAL" />
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@mipmap/add_photo" />
+
+    <!--ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/add_photo" /-->
+    <ProgressBar
+            android:id="@+id/pro_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_margin="10dp"/>
+
+    <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:background="@mipmap/border"
+            android:gravity="center"
+            android:hint="Name and Surname"
+            android:textColorHint="#cccccc" />
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:background="@mipmap/border"
+            android:gravity="center"
+            android:hint="Email Address"
+            android:textColorHint="#cccccc" />
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:background="@mipmap/border"
+            android:gravity="center"
+            android:hint="Phone"
+            android:inputType="phone"
+            android:textColorHint="#cccccc" />
+
+    <EditText
+            android:id="@+id/pwd"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:background="@mipmap/border"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLength="12"
+            android:textColorHint="#cccccc" />
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="25dp"
+            android:background="@mipmap/btn"
+            android:onClick="register"
+            android:text="Register" />
+</LinearLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <!--
+    默认左上
+
+    相对于父容器居中
+    android:layout_centerInParent
+
+    相对于父容器居左，右，上，下
+    android:layout_alignParentLeft
+    android:layout_alignParentRight
+    android:layout_alignParentTop
+    android:layout_alignParentBottom
+
+    android:layout_centerHorizontal水平居中
+    android:layout_centerVertical垂直居中
+    -->
+    <TextView
+            android:id="@+id/center"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:background="#ff0000"
+            android:text="屏幕正中"
+            android:textSize="28sp" />
+
+    <!--
+    1.在参照的那一边
+        在谁的左边，右边，上边，下边
+        android:layout_toLeftOf
+        android:layout_toRightOf
+        android:layout_above
+        android:layout_below
+    2.和参照物某边线对其
+        layout_alignTop
+        layout_alignBottom
+        layout_alignLeft
+        layout_alignRight
+    -->
+    <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/center"
+            android:layout_toLeftOf="@+id/center"
+            android:background="#00ff00"
+            android:text="中偏左上"
+            android:textSize="30sp" />
+
+    <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/center"
+            android:layout_toRightOf="@+id/center"
+            android:background="#00ff00"
+            android:text="中偏右上"
+            android:textSize="30sp" />
+
+    <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/center"
+            android:layout_toLeftOf="@+id/center"
+            android:background="#00ff00"
+            android:text="中偏左下"
+            android:textSize="30sp" />
+
+    <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/center"
+            android:layout_toRightOf="@+id/center"
+            android:background="#00ff00"
+            android:text="中偏右上"
+            android:textSize="30sp" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/center"
+            android:background="#0000ff"
+            android:text="和中间上边线对其"/>
+
+</RelativeLayout>
